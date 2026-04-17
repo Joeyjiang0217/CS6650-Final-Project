@@ -1,5 +1,6 @@
 .git
 .gitignore
+<<<<<<< HEAD
 terraform
 node_modules
 tmp
@@ -7,4 +8,10 @@ dist
 build
 bin
 *.log
+=======
+README.md
+*.md
+tmp/
+dist/
+>>>>>>> e4f8259317a0922f0e603063d1e4f69aa183be37
 .DS_Store
