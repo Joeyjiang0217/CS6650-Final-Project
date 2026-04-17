@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package chatroom.v1;
+
+option go_package = "github.com/Joeyjiang0217/CS6650-Final-Project/api/gen/chatroom/v1;chatroomv1";
+
+import "chatroom/v1/common.proto";
+
+service MessageStorageService {
+  rpc StoreStringMessage(StoreStringMessageRequest) returns (StoreStringMessageResponse);
+  rpc GetRecentMessages(GetRecentMessagesRequest) returns (GetRecentMessagesResponse);
+  rpc GetHistoryMessages(GetHistoryMessagesRequest) returns (GetHistoryMessagesResponse);
+  rpc GetUnreadMessages(GetUnreadMessagesRequest) returns (GetUnreadMessagesResponse);
+  rpc GetSessionLastMessage(GetSessionLastMessageRequest) returns (GetSessionLastMessageResponse);
+  rpc BatchGetSessionSnapshots(BatchGetSessionSnapshotsRequest) returns (BatchGetSessionSnapshotsResponse);
+}
+
+message StoreStringMessageRequest {
+  string session_id = 1;
+  string sender_id = 2;
+  string content = 3;
+}
+
+message StoreStringMessageResponse {
+  Message message = 1;
+}
+
+message GetRecentMessagesRequest {
+  string session_id = 1;
+  uint32 limit = 2;
+}
+
+message GetRecentMessagesResponse {
+  repeated Message messages = 1;
+}
+
+message GetHistoryMessagesRequest {
+  string session_id = 1;
+  uint64 before_seq = 2; // 取 session_seq < before_seq
+  uint32 limit = 3;
+}
+
+message GetHistoryMessagesResponse {
+  repeated Message messages = 1;
+}
+
+message GetUnreadMessagesRequest {
+  string session_id = 1;
+  uint64 after_seq = 2; // 取 session_seq > after_seq
+  uint32 limit = 3;
+}
+
+message GetUnreadMessagesResponse {
+  repeated Message messages = 1;
+}
+
+message GetSessionLastMessageRequest {
+  string session_id = 1;
+}
+
+message GetSessionLastMessageResponse {
+  LastMessagePreview last_message = 1;
+}
+
+message BatchGetSessionSnapshotsRequest {
+  repeated string session_ids = 1;
+}
+
+message BatchGetSessionSnapshotsResponse {
+  repeated SessionSnapshot snapshots = 1;
+}

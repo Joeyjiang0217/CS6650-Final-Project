@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package chatroom.v1;
+
+option go_package = "github.com/Joeyjiang0217/CS6650-Final-Project/api/gen/chatroom/v1;chatroomv1";
+
+import "chatroom/v1/common.proto";
+
+service MessageTransmitService {
+  rpc SendStringMessage(SendStringMessageRequest) returns (SendStringMessageResponse);
+}
+
+message SendStringMessageRequest {
+  string sender_id = 1;
+  string session_id = 2;
+  string content = 3;
+}
+
+message SendStringMessageResponse {
+  Message message = 1;
+  repeated string target_user_ids = 2;
+}

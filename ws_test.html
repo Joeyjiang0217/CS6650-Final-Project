@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatroom WS Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.4;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .row {
+      margin-bottom: 10px;
+    }
+    label {
+      display: inline-block;
+      min-width: 120px;
+      font-weight: 600;
+    }
+    input {
+      width: 360px;
+      padding: 6px 8px;
+      margin-right: 8px;
+    }
+    button {
+      padding: 6px 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    #log {
+      margin-top: 16px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      background: #f8f8f8;
+      white-space: pre-wrap;
+      min-height: 280px;
+      max-height: 500px;
+      overflow: auto;
+      font-family: Menlo, monospace;
+    }
+    .section {
+      border: 1px solid #ddd;
+      padding: 12px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+    }
+    .hint {
+      color: #666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Chatroom Gateway / WebSocket Test</h2>
+
+  <div class="section">
+    <div class="row">
+      <label>Gateway Base</label>
+      <input id="gatewayBase" value="http://127.0.0.1:8080" />
+      <span class="hint">HTTP gateway base URL</span>
+    </div>
+    <div class="row">
+      <label>WS URL</label>
+      <input id="wsUrl" value="ws://127.0.0.1:8080/ws" />
+      <button id="syncWsBtn">Sync WS URL</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>WebSocket</h3>
+    <div class="row">
+      <label>User ID</label>
+      <input id="userId" value="u1" />
+    </div>
+    <div class="row">
+      <button id="connectBtn">Connect WS</button>
+      <button id="authBtn">Auth</button>
+      <button id="pingBtn">Ping</button>
+      <button id="closeBtn">Close WS</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Create Group</h3>
+    <div class="row">
+      <label>Creator ID</label>
+      <input id="creatorId" value="u1" />
+    </div>
+    <div class="row">
+      <label>Group Name</label>
+      <input id="groupName" value="ws-demo-group" />
+    </div>
+    <div class="row">
+      <label>Member IDs</label>
+      <input id="memberIds" value="u1,u2,u3" />
+    </div>
+    <div class="row">
+      <button id="createGroupBtn">Create Group</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Send Message</h3>
+    <div class="row">
+      <label>Session ID</label>
+      <input id="sessionId" placeholder="filled automatically after create group" />
+    </div>
+    <div class="row">
+      <label>Sender ID</label>
+      <input id="senderId" value="u1" />
+    </div>
+    <div class="row">
+      <label>Content</label>
+      <input id="messageContent" value="hello websocket" />
+    </div>
+    <div class="row">
+      <button id="sendMessageBtn">Send Message</button>
+      <button id="getSessionsBtn">Get Sessions</button>
+      <button id="getRecentBtn">Get Recent Messages</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Log</h3>
+    <button id="clearLogBtn">Clear Log</button>
+    <div class="hint">
+      If HTTP requests fail from a local file, it is likely a browser CORS restriction.
+      In that case, keep using this page for WebSocket and use curl for HTTP.
+    </div>
+    <div id="log"></div>
+  </div>
+
+  <script>
+    let ws = null;
+
+    const el = (id) => document.getElementById(id);
+
+    const saveFields = () => {
+      const keys = [
+        "gatewayBase", "wsUrl", "userId", "creatorId",
+        "groupName", "memberIds", "sessionId", "senderId", "messageContent"
+      ];
+      for (const key of keys) {
+        localStorage.setItem("ws_test_" + key, el(key).value);
+      }
+    };
+
+    const loadFields = () => {
+      const keys = [
+        "gatewayBase", "wsUrl", "userId", "creatorId",
+        "groupName", "memberIds", "sessionId", "senderId", "messageContent"
+      ];
+      for (const key of keys) {
+        const v = localStorage.getItem("ws_test_" + key);
+        if (v !== null) {
+          el(key).value = v;
+        }
+      }
+    };
+
+    const log = (msg, data) => {
+      const box = el("log");
+      const ts = new Date().toISOString();
+      let line = `[${ts}] ${msg}`;
+      if (data !== undefined) {
+        if (typeof data === "string") {
+          line += ` ${data}`;
+        } else {
+          line += ` ${JSON.stringify(data, null, 2)}`;
+        }
+      }
+      box.textContent += line + "\n";
+      box.scrollTop = box.scrollHeight;
+      console.log(msg, data ?? "");
+    };
+
+    const syncWsUrl = () => {
+      const base = el("gatewayBase").value.trim();
+      let wsBase = base;
+      if (wsBase.startsWith("https://")) {
+        wsBase = "wss://" + wsBase.slice("https://".length);
+      } else if (wsBase.startsWith("http://")) {
+        wsBase = "ws://" + wsBase.slice("http://".length);
+      }
+      el("wsUrl").value = wsBase.replace(/\/+$/, "") + "/ws";
+      saveFields();
+    };
+
+    const parseMemberIds = () => {
+      const raw = el("memberIds").value.trim();
+      const parts = raw.split(",").map(s => s.trim()).filter(Boolean);
+      return [...new Set(parts)];
+    };
+
+    const connectWS = () => {
+      const url = el("wsUrl").value.trim();
+      if (!url) {
+        log("WS URL is empty");
+        return;
+      }
+
+      if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
+        log("WebSocket already open or connecting");
+        return;
+      }
+
+      ws = new WebSocket(url);
+
+      ws.onopen = () => {
+        log("WS connected");
+      };
+
+      ws.onmessage = (e) => {
+        log("WS recv:", e.data);
+      };
+
+      ws.onerror = (e) => {
+        log("WS error", e.type || e);
+      };
+
+      ws.onclose = (e) => {
+        log("WS closed", { code: e.code, reason: e.reason });
+      };
+    };
+
+    const authWS = () => {
+      if (!ws || ws.readyState !== WebSocket.OPEN) {
+        log("WS not connected");
+        return;
+      }
+      const userId = el("userId").value.trim();
+      if (!userId) {
+        log("user_id is required for auth");
+        return;
+      }
+
+      ws.send(JSON.stringify({
+        type: "auth",
+        user_id: userId
+      }));
+      log("WS sent auth", { user_id: userId });
+    };
+
+    const pingWS = () => {
+      if (!ws || ws.readyState !== WebSocket.OPEN) {
+        log("WS not connected");
+        return;
+      }
+      ws.send(JSON.stringify({ type: "ping" }));
+      log("WS sent ping");
+    };
+
+    const closeWS = () => {
+      if (ws) {
+        ws.close();
+      }
+    };
+
+    const request = async (path, options = {}) => {
+      const base = el("gatewayBase").value.trim().replace(/\/+$/, "");
+      const url = base + path;
+      saveFields();
+
+      try {
+        const resp = await fetch(url, options);
+        const text = await resp.text();
+
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          data = text;
+        }
+
+        if (!resp.ok) {
+          log(`HTTP ${resp.status} ${path} failed`, data);
+          return null;
+        }
+
+        log(`HTTP ${resp.status} ${path} success`, data);
+        return data;
+      } catch (err) {
+        log(`HTTP ${path} fetch error`, String(err));
+        log("Hint", "If this page is opened with file://, browser CORS may block fetch(). Use curl for HTTP or serve this page from your app.");
+        return null;
+      }
+    };
+
+    const createGroup = async () => {
+      const creatorId = el("creatorId").value.trim();
+      const groupName = el("groupName").value.trim();
+      const memberIds = parseMemberIds();
+
+      const data = await request("/api/sessions/group", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          creator_id: creatorId,
+          name: groupName,
+          member_ids: memberIds
+        })
+      });
+
+      if (data && data.session && data.session.session_id) {
+        el("sessionId").value = data.session.session_id;
+        saveFields();
+        log("Session ID auto-filled", data.session.session_id);
+      }
+    };
+
+    const sendMessage = async () => {
+      const senderId = el("senderId").value.trim();
+      const sessionId = el("sessionId").value.trim();
+      const content = el("messageContent").value.trim();
+
+      await request("/api/messages/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          sender_id: senderId,
+          session_id: sessionId,
+          content: content
+        })
+      });
+    };
+
+    const getSessions = async () => {
+      const userId = el("userId").value.trim();
+      await request(`/api/sessions?user_id=${encodeURIComponent(userId)}`, {
+        method: "GET"
+      });
+    };
+
+    const getRecentMessages = async () => {
+      const sessionId = el("sessionId").value.trim();
+      if (!sessionId) {
+        log("session_id is required");
+        return;
+      }
+
+      await request(`/api/sessions/${encodeURIComponent(sessionId)}/messages/recent?limit=20`, {
+        method: "GET"
+      });
+    };
+
+    window.addEventListener("beforeunload", () => {
+      if (ws) {
+        ws.close();
+      }
+    });
+
+    loadFields();
+
+    el("syncWsBtn").onclick = syncWsUrl;
+    el("connectBtn").onclick = connectWS;
+    el("authBtn").onclick = authWS;
+    el("pingBtn").onclick = pingWS;
+    el("closeBtn").onclick = closeWS;
+    el("createGroupBtn").onclick = createGroup;
+    el("sendMessageBtn").onclick = sendMessage;
+    el("getSessionsBtn").onclick = getSessions;
+    el("getRecentBtn").onclick = getRecentMessages;
+    el("clearLogBtn").onclick = () => {
+      el("log").textContent = "";
+    };
+
+    [
+      "gatewayBase", "wsUrl", "userId", "creatorId",
+      "groupName", "memberIds", "sessionId", "senderId", "messageContent"
+    ].forEach((id) => {
+      el(id).addEventListener("change", saveFields);
+      el(id).addEventListener("input", saveFields);
+    });
+
+    log("Page loaded");
+  </script>
+</body>
+</html>

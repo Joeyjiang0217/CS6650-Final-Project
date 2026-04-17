@@ -1,0 +1,14 @@
+FROM mysql:8.0
+
+WORKDIR /migrations
+COPY migrations/ /migrations/
+
+CMD ["sh", "-c", "\
+  set -e; \
+  echo 'Starting DB migrations...'; \
+  for f in /migrations/*.sql; do \
+    echo \"Running $f\"; \
+    mysql -h \"$DB_HOST\" -P \"$DB_PORT\" -u \"$DB_USER\" -p\"$DB_PASSWORD\" \"$DB_NAME\" < \"$f\"; \
+  done; \
+  echo 'All migrations completed.' \
+"]

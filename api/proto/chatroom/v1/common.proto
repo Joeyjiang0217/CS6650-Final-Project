@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package chatroom.v1;
+
+option go_package = "github.com/Joeyjiang0217/CS6650-Final-Project/api/gen/chatroom/v1;chatroomv1";
+
+import "google/protobuf/timestamp.proto";
+
+enum SessionType {
+  SESSION_TYPE_UNSPECIFIED = 0;
+  SESSION_TYPE_DIRECT = 1;
+  SESSION_TYPE_GROUP = 2;
+}
+
+enum MemberRole {
+  MEMBER_ROLE_UNSPECIFIED = 0;
+  MEMBER_ROLE_OWNER = 1;
+  MEMBER_ROLE_MEMBER = 2;
+}
+
+message User {
+  string user_id = 1;
+  string nickname = 2;
+  string avatar_url = 3;
+}
+
+message SessionMember {
+  User user = 1;
+  MemberRole role = 2;
+  google.protobuf.Timestamp joined_at = 3;
+  uint64 last_read_seq = 4;
+}
+
+message ChatSession {
+  string session_id = 1;
+  string name = 2;
+  SessionType type = 3;
+  string creator_id = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+  google.protobuf.Timestamp last_message_at = 7;
+  uint64 last_seq = 8;
+}
+
+message ChatSessionSummary {
+  ChatSession session = 1;
+  uint64 last_read_seq = 2;
+  uint64 unread_count = 3;
+}
+
+message Message {
+  string message_id = 1;
+  string session_id = 2;
+  uint64 session_seq = 3;
+  string sender_id = 4;
+  string content = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+message LastMessagePreview {
+  string message_id = 1;
+  string session_id = 2;
+  uint64 session_seq = 3;
+  string sender_id = 4;
+  string content = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+message SessionSnapshot {
+  string session_id = 1;
+  uint64 max_seq = 2;
+  LastMessagePreview last_message = 3;
+}

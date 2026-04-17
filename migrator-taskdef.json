@@ -1,0 +1,46 @@
+{
+    "family": "chatroom-dev-migrator",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-execution-role",
+    "taskRoleArn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-role",
+    "containerDefinitions": [
+      {
+        "name": "migrator",
+        "image": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-migrator:v1",
+        "essential": true,
+        "environment": [
+          {
+            "name": "DB_HOST",
+            "value": "chatroom-dev-mysql.cjias2iok297.us-west-2.rds.amazonaws.com"
+          },
+          {
+            "name": "DB_PORT",
+            "value": "3306"
+          },
+          {
+            "name": "DB_NAME",
+            "value": "chatroom"
+          },
+          {
+            "name": "DB_USER",
+            "value": "admin"
+          },
+          {
+            "name": "DB_PASSWORD",
+            "value": "change-me-in-real-usage"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/chatroom/dev/migrator",
+            "awslogs-region": "us-west-2",
+            "awslogs-stream-prefix": "migrator"
+          }
+        }
+      }
+    ]
+  }

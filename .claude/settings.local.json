@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(aws logs:*)",
+      "Bash(chmod +x:*)",
+      "Bash(terraform plan:*)",
+      "Bash(/Users/joe/Desktop/CS6650-Final-Project/scripts/force-redeploy-services.sh:*)",
+      "Bash(aws ecs:*)",
+      "Bash(terraform show:*)",
+      "Bash(terraform apply:*)",
+      "Bash(terraform state:*)",
+      "Bash(terraform refresh:*)",
+      "Bash(curl -X POST http://chatroom-dev-alb-1901196816.us-west-2.elb.amazonaws.com/api/sessions/group -H 'Content-Type: application/json' -d '{:*)",
+      "Bash(cat /Users/joe/Desktop/CS6650-Final-Project/migrations/*.sql)",
+      "Bash(aws rds:*)"
+    ]
+  }
+}

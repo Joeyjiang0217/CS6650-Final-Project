@@ -1,0 +1,152 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: chatroom-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: chatroom
+      TZ: UTC
+    command:
+      - --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  redis:
+    image: redis:7
+    container_name: chatroom-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  chatservice:
+    image: golang:1.24
+    container_name: chatroom-chatservice
+    working_dir: /app
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - go_mod_cache:/go/pkg/mod
+      - go_build_cache:/root/.cache/go-build
+    environment:
+      CHATSERVICE_ADDR: ":50051"
+      CHATSERVICE_DB_HOST: "mysql"
+      CHATSERVICE_DB_PORT: "3306"
+      CHATSERVICE_DB_USER: "root"
+      CHATSERVICE_DB_PASSWORD: "root"
+      CHATSERVICE_DB_NAME: "chatroom"
+      CHATSERVICE_DB_MAX_OPEN_CONNS: "20"
+      CHATSERVICE_DB_MAX_IDLE_CONNS: "10"
+      CHATSERVICE_DB_CONN_MAX_LIFETIME_MIN: "30"
+      CHATSERVICE_DB_CONN_MAX_IDLE_TIME_MIN: "5"
+    command: >
+      sh -c "go mod download && go run ./cmd/chatservice"
+    ports:
+      - "50051:50051"
+
+  messagestorage:
+    image: golang:1.24
+    container_name: chatroom-messagestorage
+    working_dir: /app
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - go_mod_cache:/go/pkg/mod
+      - go_build_cache:/root/.cache/go-build
+    environment:
+      MESSAGESTORAGE_ADDR: ":50052"
+      MESSAGESTORAGE_DB_HOST: "mysql"
+      MESSAGESTORAGE_DB_PORT: "3306"
+      MESSAGESTORAGE_DB_USER: "root"
+      MESSAGESTORAGE_DB_PASSWORD: "root"
+      MESSAGESTORAGE_DB_NAME: "chatroom"
+      MESSAGESTORAGE_DB_MAX_OPEN_CONNS: "20"
+      MESSAGESTORAGE_DB_MAX_IDLE_CONNS: "10"
+      MESSAGESTORAGE_DB_CONN_MAX_LIFETIME_MIN: "30"
+      MESSAGESTORAGE_DB_CONN_MAX_IDLE_TIME_MIN: "5"
+    command: >
+      sh -c "go mod download && go run ./cmd/messagestorage"
+    ports:
+      - "50052:50052"
+
+  messagetransmit:
+    image: golang:1.24
+    container_name: chatroom-messagetransmit
+    working_dir: /app
+    restart: unless-stopped
+    depends_on:
+      chatservice:
+        condition: service_started
+      messagestorage:
+        condition: service_started
+    volumes:
+      - .:/app
+      - go_mod_cache:/go/pkg/mod
+      - go_build_cache:/root/.cache/go-build
+    environment:
+      MESSAGETRANSMIT_ADDR: ":50053"
+      CHATSERVICE_TARGET: "chatservice:50051"
+      MESSAGESTORAGE_TARGET: "messagestorage:50052"
+      MESSAGETRANSMIT_CLIENT_TIMEOUT_SEC: "3"
+    command: >
+      sh -c "go mod download && go run ./cmd/messagetransmit"
+    ports:
+      - "50053:50053"
+
+  gateway:
+    image: golang:1.24
+    container_name: chatroom-gateway
+    working_dir: /app
+    restart: unless-stopped
+    depends_on:
+      chatservice:
+        condition: service_started
+      messagestorage:
+        condition: service_started
+      messagetransmit:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - go_mod_cache:/go/pkg/mod
+      - go_build_cache:/root/.cache/go-build
+    environment:
+      GATEWAY_ADDR: ":8080"
+      CHATSERVICE_TARGET: "chatservice:50051"
+      MESSAGESTORAGE_TARGET: "messagestorage:50052"
+      MESSAGETRANSMIT_TARGET: "messagetransmit:50053"
+      GATEWAY_CLIENT_TIMEOUT_SEC: "3"
+      REDIS_ADDR: "redis:6379"
+      REDIS_PASSWORD: ""
+      REDIS_DB: "0"
+      REDIS_ONLINE_TTL_SEC: "7200"
+      GATEWAY_INSTANCE_ID: "gateway-compose"
+    command: >
+      sh -c "go mod download && go run ./cmd/gateway"
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
+  go_mod_cache:
+  go_build_cache:

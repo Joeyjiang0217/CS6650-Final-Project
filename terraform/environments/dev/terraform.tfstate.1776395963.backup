@@ -1,0 +1,4719 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.3",
+  "serial": 90,
+  "lineage": "30a1c1bf-7c72-38a6-69ea-1feb3fe76f78",
+  "outputs": {
+    "alb_dns_name": {
+      "value": "chatroom-dev-alb-1498760335.us-west-2.elb.amazonaws.com",
+      "type": "string"
+    },
+    "alb_security_group_id": {
+      "value": "sg-04f5ad284078f4bf6",
+      "type": "string"
+    },
+    "chatservice_service_name": {
+      "value": "chatroom-dev-chatservice",
+      "type": "string"
+    },
+    "ecr_repository_urls": {
+      "value": {
+        "chatservice": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-chatservice",
+        "gateway": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-gateway",
+        "messagestorage": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-messagestorage",
+        "messagetransmit": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-messagetransmit"
+      },
+      "type": [
+        "object",
+        {
+          "chatservice": "string",
+          "gateway": "string",
+          "messagestorage": "string",
+          "messagetransmit": "string"
+        }
+      ]
+    },
+    "ecs_cluster_arn": {
+      "value": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+      "type": "string"
+    },
+    "ecs_cluster_name": {
+      "value": "chatroom-dev-cluster",
+      "type": "string"
+    },
+    "ecs_task_execution_role_arn": {
+      "value": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-execution-role",
+      "type": "string"
+    },
+    "ecs_task_role_arn": {
+      "value": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-role",
+      "type": "string"
+    },
+    "gateway_security_group_id": {
+      "value": "sg-03e7471a286c055fe",
+      "type": "string"
+    },
+    "gateway_service_name": {
+      "value": "chatroom-dev-gateway",
+      "type": "string"
+    },
+    "gateway_target_group_arn": {
+      "value": "arn:aws:elasticloadbalancing:us-west-2:627195602448:targetgroup/chatroom-dev-gw-tg/2ac6f030fbc082c3",
+      "type": "string"
+    },
+    "internal_service_security_group_id": {
+      "value": "sg-0833176ea59989ebd",
+      "type": "string"
+    },
+    "log_group_names": {
+      "value": {
+        "chatservice": "/ecs/chatroom/dev/chatservice",
+        "gateway": "/ecs/chatroom/dev/gateway",
+        "messagestorage": "/ecs/chatroom/dev/messagestorage",
+        "messagetransmit": "/ecs/chatroom/dev/messagetransmit"
+      },
+      "type": [
+        "object",
+        {
+          "chatservice": "string",
+          "gateway": "string",
+          "messagestorage": "string",
+          "messagetransmit": "string"
+        }
+      ]
+    },
+    "messagestorage_service_name": {
+      "value": "chatroom-dev-messagestorage",
+      "type": "string"
+    },
+    "messagetransmit_service_name": {
+      "value": "chatroom-dev-messagetransmit",
+      "type": "string"
+    },
+    "private_app_subnet_ids": {
+      "value": [
+        "subnet-04b307ec21f9d002b",
+        "subnet-04369b1bdaed3f7ba"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string",
+          "string"
+        ]
+      ]
+    },
+    "private_data_subnet_ids": {
+      "value": [
+        "subnet-09ff0432ad8e7caab",
+        "subnet-0726d7ad6ae3b222c"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string",
+          "string"
+        ]
+      ]
+    },
+    "public_subnet_ids": {
+      "value": [
+        "subnet-07afdca43e3825236",
+        "subnet-04227272510c8578b"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string",
+          "string"
+        ]
+      ]
+    },
+    "rds_endpoint": {
+      "value": "chatroom-dev-mysql.cjias2iok297.us-west-2.rds.amazonaws.com",
+      "type": "string"
+    },
+    "rds_port": {
+      "value": 3306,
+      "type": "number"
+    },
+    "rds_security_group_id": {
+      "value": "sg-0c39d966d26b02b9d",
+      "type": "string"
+    },
+    "redis_port": {
+      "value": 6379,
+      "type": "number"
+    },
+    "redis_primary_endpoint": {
+      "value": "chatroom-dev-redis.yocw1g.ng.0001.usw2.cache.amazonaws.com",
+      "type": "string"
+    },
+    "redis_security_group_id": {
+      "value": "sg-0ef9023a01df1bf99",
+      "type": "string"
+    },
+    "service_connect_namespace_arn": {
+      "value": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-2shfoag4q5qok3p2",
+      "type": "string"
+    },
+    "vpc_id": {
+      "value": "vpc-0dab25c4673aa03a8",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_ecr_image",
+      "name": "chatservice",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "mode": "data",
+      "type": "aws_ecr_image",
+      "name": "gateway",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "mode": "data",
+      "type": "aws_ecr_image",
+      "name": "messagestorage",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "mode": "data",
+      "type": "aws_ecr_image",
+      "name": "messagetransmit",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "mode": "managed",
+      "type": "aws_service_discovery_http_namespace",
+      "name": "service_connect",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-yw74ginhaezk6zaz",
+            "description": "Service Connect namespace for chatroom-dev",
+            "http_name": "chatroom-dev-sc",
+            "id": "ns-yw74ginhaezk6zaz",
+            "name": "chatroom-dev-sc",
+            "region": "us-west-2",
+            "tags": {},
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_service_discovery_private_dns_namespace",
+      "name": "service_connect",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-2shfoag4q5qok3p2",
+            "description": "Private DNS namespace for chatroom-dev",
+            "hosted_zone": "Z06816672FK02Y5T0X9J3",
+            "id": "ns-2shfoag4q5qok3p2",
+            "name": "chatroom-dev.local",
+            "region": "us-west-2",
+            "tags": {},
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "vpc": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.alb",
+      "mode": "managed",
+      "type": "aws_lb",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_logs": [
+              {
+                "bucket": "",
+                "enabled": false,
+                "prefix": ""
+              }
+            ],
+            "arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:loadbalancer/app/chatroom-dev-alb/c24765c483be933b",
+            "arn_suffix": "app/chatroom-dev-alb/c24765c483be933b",
+            "client_keep_alive": 3600,
+            "connection_logs": [
+              {
+                "bucket": "",
+                "enabled": false,
+                "prefix": ""
+              }
+            ],
+            "customer_owned_ipv4_pool": "",
+            "desync_mitigation_mode": "defensive",
+            "dns_name": "chatroom-dev-alb-1498760335.us-west-2.elb.amazonaws.com",
+            "dns_record_client_routing_policy": null,
+            "drop_invalid_header_fields": false,
+            "enable_cross_zone_load_balancing": true,
+            "enable_deletion_protection": false,
+            "enable_http2": true,
+            "enable_tls_version_and_cipher_suite_headers": false,
+            "enable_waf_fail_open": false,
+            "enable_xff_client_port": false,
+            "enable_zonal_shift": false,
+            "enforce_security_group_inbound_rules_on_private_link_traffic": "",
+            "health_check_logs": [
+              {
+                "bucket": "",
+                "enabled": false,
+                "prefix": ""
+              }
+            ],
+            "id": "arn:aws:elasticloadbalancing:us-west-2:627195602448:loadbalancer/app/chatroom-dev-alb/c24765c483be933b",
+            "idle_timeout": 60,
+            "internal": false,
+            "ip_address_type": "ipv4",
+            "ipam_pools": [],
+            "load_balancer_type": "application",
+            "minimum_load_balancer_capacity": [],
+            "name": "chatroom-dev-alb",
+            "name_prefix": "",
+            "preserve_host_header": false,
+            "region": "us-west-2",
+            "secondary_ips_auto_assigned_per_subnet": null,
+            "security_groups": [
+              "sg-04f5ad284078f4bf6"
+            ],
+            "subnet_mapping": [
+              {
+                "allocation_id": "",
+                "ipv6_address": "",
+                "outpost_id": "",
+                "private_ipv4_address": "",
+                "subnet_id": "subnet-04227272510c8578b"
+              },
+              {
+                "allocation_id": "",
+                "ipv6_address": "",
+                "outpost_id": "",
+                "private_ipv4_address": "",
+                "subnet_id": "subnet-07afdca43e3825236"
+              }
+            ],
+            "subnets": [
+              "subnet-04227272510c8578b",
+              "subnet-07afdca43e3825236"
+            ],
+            "tags": {
+              "Name": "chatroom-dev-alb"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-alb",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8",
+            "xff_header_processing_mode": "append",
+            "zone_id": "Z1H1FL5HABSF5"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:loadbalancer/app/chatroom-dev-alb/c24765c483be933b"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.alb"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.alb",
+      "mode": "managed",
+      "type": "aws_lb_listener",
+      "name": "http",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "alpn_policy": null,
+            "arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:listener/app/chatroom-dev-alb/c24765c483be933b/17b0ba211ac469be",
+            "certificate_arn": null,
+            "default_action": [
+              {
+                "authenticate_cognito": [],
+                "authenticate_oidc": [],
+                "fixed_response": [],
+                "forward": [],
+                "jwt_validation": [],
+                "order": 1,
+                "redirect": [],
+                "target_group_arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:targetgroup/chatroom-dev-gw-tg/2ac6f030fbc082c3",
+                "type": "forward"
+              }
+            ],
+            "id": "arn:aws:elasticloadbalancing:us-west-2:627195602448:listener/app/chatroom-dev-alb/c24765c483be933b/17b0ba211ac469be",
+            "load_balancer_arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:loadbalancer/app/chatroom-dev-alb/c24765c483be933b",
+            "mutual_authentication": [],
+            "port": 80,
+            "protocol": "HTTP",
+            "region": "us-west-2",
+            "routing_http_request_x_amzn_mtls_clientcert_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_issuer_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_leaf_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_serial_number_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_subject_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_validity_header_name": null,
+            "routing_http_request_x_amzn_tls_cipher_suite_header_name": null,
+            "routing_http_request_x_amzn_tls_version_header_name": null,
+            "routing_http_response_access_control_allow_credentials_header_value": "",
+            "routing_http_response_access_control_allow_headers_header_value": "",
+            "routing_http_response_access_control_allow_methods_header_value": "",
+            "routing_http_response_access_control_allow_origin_header_value": "",
+            "routing_http_response_access_control_expose_headers_header_value": "",
+            "routing_http_response_access_control_max_age_header_value": "",
+            "routing_http_response_content_security_policy_header_value": "",
+            "routing_http_response_server_enabled": true,
+            "routing_http_response_strict_transport_security_header_value": "",
+            "routing_http_response_x_content_type_options_header_value": "",
+            "routing_http_response_x_frame_options_header_value": "",
+            "ssl_policy": "",
+            "tags": {},
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "tcp_idle_timeout_seconds": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:listener/app/chatroom-dev-alb/c24765c483be933b/17b0ba211ac469be"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsInVwZGF0ZSI6MzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.alb.aws_lb.this",
+            "module.alb.aws_lb_target_group.gateway",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.alb"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.alb",
+      "mode": "managed",
+      "type": "aws_lb_target_group",
+      "name": "gateway",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:targetgroup/chatroom-dev-gw-tg/2ac6f030fbc082c3",
+            "arn_suffix": "targetgroup/chatroom-dev-gw-tg/2ac6f030fbc082c3",
+            "connection_termination": null,
+            "deregistration_delay": "300",
+            "health_check": [
+              {
+                "enabled": true,
+                "healthy_threshold": 2,
+                "interval": 30,
+                "matcher": "200",
+                "path": "/health",
+                "port": "traffic-port",
+                "protocol": "HTTP",
+                "timeout": 5,
+                "unhealthy_threshold": 3
+              }
+            ],
+            "id": "arn:aws:elasticloadbalancing:us-west-2:627195602448:targetgroup/chatroom-dev-gw-tg/2ac6f030fbc082c3",
+            "ip_address_type": "ipv4",
+            "lambda_multi_value_headers_enabled": false,
+            "load_balancer_arns": [
+              "arn:aws:elasticloadbalancing:us-west-2:627195602448:loadbalancer/app/chatroom-dev-alb/c24765c483be933b"
+            ],
+            "load_balancing_algorithm_type": "round_robin",
+            "load_balancing_anomaly_mitigation": "off",
+            "load_balancing_cross_zone_enabled": "use_load_balancer_configuration",
+            "name": "chatroom-dev-gw-tg",
+            "name_prefix": "",
+            "port": 8080,
+            "preserve_client_ip": null,
+            "protocol": "HTTP",
+            "protocol_version": "HTTP1",
+            "proxy_protocol_v2": false,
+            "region": "us-west-2",
+            "slow_start": 0,
+            "stickiness": [
+              {
+                "cookie_duration": 86400,
+                "cookie_name": "",
+                "enabled": false,
+                "type": "lb_cookie"
+              }
+            ],
+            "tags": {
+              "Name": "chatroom-dev-gw-tg"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-gw-tg",
+              "Project": "chatroom"
+            },
+            "target_control_port": 0,
+            "target_failover": [
+              {
+                "on_deregistration": null,
+                "on_unhealthy": null
+              }
+            ],
+            "target_group_health": [
+              {
+                "dns_failover": [
+                  {
+                    "minimum_healthy_targets_count": "1",
+                    "minimum_healthy_targets_percentage": "off"
+                  }
+                ],
+                "unhealthy_state_routing": [
+                  {
+                    "minimum_healthy_targets_count": 1,
+                    "minimum_healthy_targets_percentage": "off"
+                  }
+                ]
+              }
+            ],
+            "target_health_state": [
+              {
+                "enable_unhealthy_connection_termination": null,
+                "unhealthy_draining_interval": null
+              }
+            ],
+            "target_type": "ip",
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:targetgroup/chatroom-dev-gw-tg/2ac6f030fbc082c3"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.chatservice_service",
+      "mode": "managed",
+      "type": "aws_ecs_service",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "arn": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-chatservice",
+            "availability_zone_rebalancing": "ENABLED",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "deployment_circuit_breaker": [
+              {
+                "enable": false,
+                "rollback": false
+              }
+            ],
+            "deployment_configuration": [
+              {
+                "bake_time_in_minutes": "0",
+                "canary_configuration": [],
+                "lifecycle_hook": [],
+                "linear_configuration": [],
+                "strategy": "ROLLING"
+              }
+            ],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 50,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": true,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": "/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "id": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-chatservice",
+            "launch_type": "FARGATE",
+            "load_balancer": [],
+            "name": "chatroom-dev-chatservice",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-0833176ea59989ebd"
+                ],
+                "subnets": [
+                  "subnet-04369b1bdaed3f7ba",
+                  "subnet-04b307ec21f9d002b"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "LATEST",
+            "propagate_tags": "NONE",
+            "region": "us-west-2",
+            "scheduling_strategy": "REPLICA",
+            "service_connect_configuration": [
+              {
+                "access_log_configuration": [],
+                "enabled": true,
+                "log_configuration": [],
+                "namespace": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-yw74ginhaezk6zaz",
+                "service": [
+                  {
+                    "client_alias": [
+                      {
+                        "dns_name": "chatservice",
+                        "port": 50051,
+                        "test_traffic_rules": []
+                      }
+                    ],
+                    "discovery_name": "chatservice",
+                    "ingress_port_override": 0,
+                    "port_name": "grpc-chatservice",
+                    "timeout": [],
+                    "tls": []
+                  }
+                ]
+              }
+            ],
+            "service_registries": [],
+            "sigint_rollback": null,
+            "tags": {
+              "Name": "chatroom-dev-chatservice"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-chatservice",
+              "Project": "chatroom"
+            },
+            "task_definition": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-chatservice:1",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "name": "chatroom-dev-chatservice",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_service_discovery_http_namespace.service_connect",
+            "aws_service_discovery_private_dns_namespace.service_connect",
+            "data.aws_ecr_image.chatservice",
+            "module.chatservice_service.aws_ecs_task_definition.this",
+            "module.ecs_cluster.aws_ecs_cluster.this",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.rds_mysql.aws_db_instance.this",
+            "module.rds_mysql.aws_db_subnet_group.this",
+            "module.security.aws_security_group.internal_service",
+            "module.security.aws_security_group.rds"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.chatservice_service",
+      "mode": "managed",
+      "type": "aws_ecs_task_definition",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-chatservice:1",
+            "arn_without_revision": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-chatservice",
+            "container_definitions": "[{\"environment\":[{\"name\":\"CHATSERVICE_ADDR\",\"value\":\":50051\"},{\"name\":\"CHATSERVICE_DB_CONN_MAX_IDLE_TIME_MIN\",\"value\":\"5\"},{\"name\":\"CHATSERVICE_DB_CONN_MAX_LIFETIME_MIN\",\"value\":\"30\"},{\"name\":\"CHATSERVICE_DB_HOST\",\"value\":\"chatroom-dev-mysql.cjias2iok297.us-west-2.rds.amazonaws.com\"},{\"name\":\"CHATSERVICE_DB_MAX_IDLE_CONNS\",\"value\":\"10\"},{\"name\":\"CHATSERVICE_DB_MAX_OPEN_CONNS\",\"value\":\"20\"},{\"name\":\"CHATSERVICE_DB_NAME\",\"value\":\"chatroom\"},{\"name\":\"CHATSERVICE_DB_PASSWORD\",\"value\":\"change-me-in-real-usage\"},{\"name\":\"CHATSERVICE_DB_PORT\",\"value\":\"3306\"},{\"name\":\"CHATSERVICE_DB_USER\",\"value\":\"admin\"}],\"essential\":true,\"image\":\"627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-chatservice:v1\",\"logConfiguration\":{\"logDriver\":\"awslogs\",\"options\":{\"awslogs-group\":\"/ecs/chatroom/dev/chatservice\",\"awslogs-region\":\"us-west-2\",\"awslogs-stream-prefix\":\"chatservice\"}},\"mountPoints\":[],\"name\":\"chatservice\",\"portMappings\":[{\"appProtocol\":\"grpc\",\"containerPort\":50051,\"hostPort\":50051,\"name\":\"grpc-chatservice\",\"protocol\":\"tcp\"}],\"systemControls\":[],\"volumesFrom\":[]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-execution-role",
+            "family": "chatroom-dev-chatservice",
+            "id": "chatroom-dev-chatservice",
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "region": "us-west-2",
+            "requires_compatibilities": [
+              "FARGATE"
+            ],
+            "revision": 1,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-chatservice-taskdef"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-chatservice-taskdef",
+              "Project": "chatroom"
+            },
+            "task_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-role",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "container_definitions"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "family": "chatroom-dev-chatservice",
+            "region": "us-west-2",
+            "revision": 1
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "data.aws_ecr_image.chatservice",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.rds_mysql.aws_db_instance.this",
+            "module.rds_mysql.aws_db_subnet_group.this",
+            "module.security.aws_security_group.rds"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.ecr",
+      "mode": "managed",
+      "type": "aws_ecr_repository",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "chatservice",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-west-2:627195602448:repository/chatroom-dev-chatservice",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "chatroom-dev-chatservice",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": true
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "image_tag_mutability_exclusion_filter": [],
+            "name": "chatroom-dev-chatservice",
+            "region": "us-west-2",
+            "registry_id": "627195602448",
+            "repository_url": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-chatservice",
+            "tags": {
+              "Name": "chatroom-dev-chatservice"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-chatservice",
+              "Project": "chatroom"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "chatroom-dev-chatservice",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "gateway",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-west-2:627195602448:repository/chatroom-dev-gateway",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "chatroom-dev-gateway",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": true
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "image_tag_mutability_exclusion_filter": [],
+            "name": "chatroom-dev-gateway",
+            "region": "us-west-2",
+            "registry_id": "627195602448",
+            "repository_url": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-gateway",
+            "tags": {
+              "Name": "chatroom-dev-gateway"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-gateway",
+              "Project": "chatroom"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "chatroom-dev-gateway",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "messagestorage",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-west-2:627195602448:repository/chatroom-dev-messagestorage",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "chatroom-dev-messagestorage",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": true
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "image_tag_mutability_exclusion_filter": [],
+            "name": "chatroom-dev-messagestorage",
+            "region": "us-west-2",
+            "registry_id": "627195602448",
+            "repository_url": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-messagestorage",
+            "tags": {
+              "Name": "chatroom-dev-messagestorage"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagestorage",
+              "Project": "chatroom"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "chatroom-dev-messagestorage",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "messagetransmit",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-west-2:627195602448:repository/chatroom-dev-messagetransmit",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "chatroom-dev-messagetransmit",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": true
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "image_tag_mutability_exclusion_filter": [],
+            "name": "chatroom-dev-messagetransmit",
+            "region": "us-west-2",
+            "registry_id": "627195602448",
+            "repository_url": "627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-messagetransmit",
+            "tags": {
+              "Name": "chatroom-dev-messagetransmit"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagetransmit",
+              "Project": "chatroom"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "chatroom-dev-messagetransmit",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "module": "module.ecs_cluster",
+      "mode": "managed",
+      "type": "aws_ecs_cluster",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "configuration": [],
+            "id": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "name": "chatroom-dev-cluster",
+            "region": "us-west-2",
+            "service_connect_defaults": [
+              {
+                "namespace": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-2shfoag4q5qok3p2"
+              }
+            ],
+            "setting": [
+              {
+                "name": "containerInsights",
+                "value": "enabled"
+              }
+            ],
+            "tags": {
+              "Name": "chatroom-dev-cluster"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-cluster",
+              "Project": "chatroom"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_service_discovery_private_dns_namespace.service_connect",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.elasticache_redis",
+      "mode": "managed",
+      "type": "aws_elasticache_replication_group",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 3,
+          "attributes": {
+            "apply_immediately": null,
+            "arn": "arn:aws:elasticache:us-west-2:627195602448:replicationgroup:chatroom-dev-redis",
+            "at_rest_encryption_enabled": "false",
+            "auth_token": "",
+            "auth_token_update_strategy": null,
+            "auto_minor_version_upgrade": "true",
+            "automatic_failover_enabled": false,
+            "cluster_enabled": false,
+            "cluster_mode": "disabled",
+            "configuration_endpoint_address": null,
+            "data_tiering_enabled": false,
+            "description": "chatroom-dev redis replication group",
+            "engine": "redis",
+            "engine_version": "7.1",
+            "engine_version_actual": "7.1.0",
+            "final_snapshot_identifier": null,
+            "global_replication_group_id": null,
+            "id": "chatroom-dev-redis",
+            "ip_discovery": "ipv4",
+            "kms_key_id": "",
+            "log_delivery_configuration": [],
+            "maintenance_window": "wed:07:30-wed:08:30",
+            "member_clusters": [
+              "chatroom-dev-redis-001"
+            ],
+            "multi_az_enabled": false,
+            "network_type": "ipv4",
+            "node_group_configuration": [
+              {
+                "node_group_id": "0001",
+                "primary_availability_zone": "us-west-2b",
+                "primary_outpost_arn": "",
+                "replica_availability_zones": [],
+                "replica_count": 0,
+                "replica_outpost_arns": [],
+                "slots": ""
+              }
+            ],
+            "node_type": "cache.t4g.micro",
+            "notification_topic_arn": null,
+            "num_cache_clusters": 1,
+            "num_node_groups": 1,
+            "parameter_group_name": "default.redis7",
+            "port": 6379,
+            "preferred_cache_cluster_azs": null,
+            "primary_endpoint_address": "chatroom-dev-redis.yocw1g.ng.0001.usw2.cache.amazonaws.com",
+            "reader_endpoint_address": "chatroom-dev-redis-ro.yocw1g.ng.0001.usw2.cache.amazonaws.com",
+            "region": "us-west-2",
+            "replicas_per_node_group": 0,
+            "replication_group_id": "chatroom-dev-redis",
+            "security_group_ids": [
+              "sg-0ef9023a01df1bf99"
+            ],
+            "security_group_names": [],
+            "snapshot_arns": null,
+            "snapshot_name": null,
+            "snapshot_retention_limit": 0,
+            "snapshot_window": "09:00-10:00",
+            "subnet_group_name": "chatroom-dev-redis-subnet-group",
+            "tags": {
+              "Name": "chatroom-dev-redis"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-redis",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "transit_encryption_enabled": false,
+            "transit_encryption_mode": "",
+            "user_group_ids": []
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "auth_token"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInVwZGF0ZSI6MjQwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMyJ9",
+          "dependencies": [
+            "module.elasticache_redis.aws_elasticache_subnet_group.this",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.redis"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.elasticache_redis",
+      "mode": "managed",
+      "type": "aws_elasticache_subnet_group",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:elasticache:us-west-2:627195602448:subnetgroup:chatroom-dev-redis-subnet-group",
+            "description": "Managed by Terraform",
+            "id": "chatroom-dev-redis-subnet-group",
+            "name": "chatroom-dev-redis-subnet-group",
+            "region": "us-west-2",
+            "subnet_ids": [
+              "subnet-0726d7ad6ae3b222c",
+              "subnet-09ff0432ad8e7caab"
+            ],
+            "tags": {
+              "Name": "chatroom-dev-redis-subnet-group"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-redis-subnet-group",
+              "Project": "chatroom"
+            },
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.gateway_service",
+      "mode": "managed",
+      "type": "aws_ecs_service",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "arn": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-gateway",
+            "availability_zone_rebalancing": "ENABLED",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "deployment_circuit_breaker": [
+              {
+                "enable": false,
+                "rollback": false
+              }
+            ],
+            "deployment_configuration": [
+              {
+                "bake_time_in_minutes": "0",
+                "canary_configuration": [],
+                "lifecycle_hook": [],
+                "linear_configuration": [],
+                "strategy": "ROLLING"
+              }
+            ],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 50,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": true,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 60,
+            "iam_role": "/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "id": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-gateway",
+            "launch_type": "FARGATE",
+            "load_balancer": [
+              {
+                "advanced_configuration": [],
+                "container_name": "gateway",
+                "container_port": 8080,
+                "elb_name": "",
+                "target_group_arn": "arn:aws:elasticloadbalancing:us-west-2:627195602448:targetgroup/chatroom-dev-gw-tg/2ac6f030fbc082c3"
+              }
+            ],
+            "name": "chatroom-dev-gateway",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-03e7471a286c055fe"
+                ],
+                "subnets": [
+                  "subnet-04369b1bdaed3f7ba",
+                  "subnet-04b307ec21f9d002b"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "LATEST",
+            "propagate_tags": "NONE",
+            "region": "us-west-2",
+            "scheduling_strategy": "REPLICA",
+            "service_connect_configuration": [
+              {
+                "access_log_configuration": [],
+                "enabled": true,
+                "log_configuration": [],
+                "namespace": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-yw74ginhaezk6zaz",
+                "service": []
+              }
+            ],
+            "service_registries": [],
+            "sigint_rollback": null,
+            "tags": {
+              "Name": "chatroom-dev-gateway"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-gateway",
+              "Project": "chatroom"
+            },
+            "task_definition": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-gateway:1",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "name": "chatroom-dev-gateway",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_service_discovery_http_namespace.service_connect",
+            "aws_service_discovery_private_dns_namespace.service_connect",
+            "data.aws_ecr_image.gateway",
+            "module.alb.aws_lb_target_group.gateway",
+            "module.ecs_cluster.aws_ecs_cluster.this",
+            "module.elasticache_redis.aws_elasticache_replication_group.this",
+            "module.elasticache_redis.aws_elasticache_subnet_group.this",
+            "module.gateway_service.aws_ecs_task_definition.this",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.gateway",
+            "module.security.aws_security_group.redis"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.gateway_service",
+      "mode": "managed",
+      "type": "aws_ecs_task_definition",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-gateway:1",
+            "arn_without_revision": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-gateway",
+            "container_definitions": "[{\"environment\":[{\"name\":\"CHATSERVICE_TARGET\",\"value\":\"chatservice:50051\"},{\"name\":\"GATEWAY_ADDR\",\"value\":\":8080\"},{\"name\":\"GATEWAY_CLIENT_TIMEOUT_SEC\",\"value\":\"3\"},{\"name\":\"GATEWAY_INSTANCE_ID\",\"value\":\"gateway-dev\"},{\"name\":\"MESSAGESTORAGE_TARGET\",\"value\":\"messagestorage:50052\"},{\"name\":\"MESSAGETRANSMIT_TARGET\",\"value\":\"messagetransmit:50053\"},{\"name\":\"REDIS_ADDR\",\"value\":\"chatroom-dev-redis.yocw1g.ng.0001.usw2.cache.amazonaws.com:6379\"},{\"name\":\"REDIS_DB\",\"value\":\"0\"},{\"name\":\"REDIS_ONLINE_TTL_SEC\",\"value\":\"7200\"},{\"name\":\"REDIS_PASSWORD\",\"value\":\"\"}],\"essential\":true,\"image\":\"627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-gateway:v1\",\"logConfiguration\":{\"logDriver\":\"awslogs\",\"options\":{\"awslogs-group\":\"/ecs/chatroom/dev/gateway\",\"awslogs-region\":\"us-west-2\",\"awslogs-stream-prefix\":\"gateway\"}},\"mountPoints\":[],\"name\":\"gateway\",\"portMappings\":[{\"appProtocol\":\"http\",\"containerPort\":8080,\"hostPort\":8080,\"name\":\"http-gateway\",\"protocol\":\"tcp\"}],\"systemControls\":[],\"volumesFrom\":[]}]",
+            "cpu": "512",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-execution-role",
+            "family": "chatroom-dev-gateway",
+            "id": "chatroom-dev-gateway",
+            "ipc_mode": "",
+            "memory": "1024",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "region": "us-west-2",
+            "requires_compatibilities": [
+              "FARGATE"
+            ],
+            "revision": 1,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-gateway-taskdef"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-gateway-taskdef",
+              "Project": "chatroom"
+            },
+            "task_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-role",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "family": "chatroom-dev-gateway",
+            "region": "us-west-2",
+            "revision": 1
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "data.aws_ecr_image.gateway",
+            "module.elasticache_redis.aws_elasticache_replication_group.this",
+            "module.elasticache_redis.aws_elasticache_subnet_group.this",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.redis"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.iam",
+      "mode": "data",
+      "type": "aws_iam_policy_document",
+      "name": "ecs_task_execution_assume_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "1077804475",
+            "json": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"sts:AssumeRole\",\n      \"Principal\": {\n        \"Service\": \"ecs-tasks.amazonaws.com\"\n      }\n    }\n  ]\n}",
+            "minified_json": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"sts:AssumeRole\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"}}]}",
+            "override_json": null,
+            "override_policy_documents": null,
+            "policy_id": null,
+            "source_json": null,
+            "source_policy_documents": null,
+            "statement": [
+              {
+                "actions": [
+                  "sts:AssumeRole"
+                ],
+                "condition": [],
+                "effect": "Allow",
+                "not_actions": [],
+                "not_principals": [],
+                "not_resources": [],
+                "principals": [
+                  {
+                    "identifiers": [
+                      "ecs-tasks.amazonaws.com"
+                    ],
+                    "type": "Service"
+                  }
+                ],
+                "resources": [],
+                "sid": ""
+              }
+            ],
+            "version": "2012-10-17"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.iam",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "ecs_task",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-04-17T02:19:53Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "chatroom-dev-ecs-task-role",
+            "inline_policy": [],
+            "managed_policy_arns": [],
+            "max_session_duration": 3600,
+            "name": "chatroom-dev-ecs-task-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {
+              "Name": "chatroom-dev-ecs-task-role"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-ecs-task-role",
+              "Project": "chatroom"
+            },
+            "unique_id": "AROAZEB6FMYIPWY3TCY3Z"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "chatroom-dev-ecs-task-role"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.iam",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "ecs_task_execution",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-execution-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-04-17T02:19:53Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "chatroom-dev-ecs-task-execution-role",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+            ],
+            "max_session_duration": 3600,
+            "name": "chatroom-dev-ecs-task-execution-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {
+              "Name": "chatroom-dev-ecs-task-execution-role"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-ecs-task-execution-role",
+              "Project": "chatroom"
+            },
+            "unique_id": "AROAZEB6FMYIP5IJQNCER"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "chatroom-dev-ecs-task-execution-role"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.iam",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "ecs_task_execution_managed",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "chatroom-dev-ecs-task-execution-role/arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+            "policy_arn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+            "role": "chatroom-dev-ecs-task-execution-role"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "policy_arn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+            "role": "chatroom-dev-ecs-task-execution-role"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.logs",
+      "mode": "managed",
+      "type": "aws_cloudwatch_log_group",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "chatservice",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:logs:us-west-2:627195602448:log-group:/ecs/chatroom/dev/chatservice",
+            "deletion_protection_enabled": false,
+            "id": "/ecs/chatroom/dev/chatservice",
+            "kms_key_id": "",
+            "log_group_class": "STANDARD",
+            "name": "/ecs/chatroom/dev/chatservice",
+            "name_prefix": "",
+            "region": "us-west-2",
+            "retention_in_days": 30,
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-chatservice-logs"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-chatservice-logs",
+              "Project": "chatroom"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "/ecs/chatroom/dev/chatservice",
+            "region": "us-west-2"
+          },
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "gateway",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:logs:us-west-2:627195602448:log-group:/ecs/chatroom/dev/gateway",
+            "deletion_protection_enabled": false,
+            "id": "/ecs/chatroom/dev/gateway",
+            "kms_key_id": "",
+            "log_group_class": "STANDARD",
+            "name": "/ecs/chatroom/dev/gateway",
+            "name_prefix": "",
+            "region": "us-west-2",
+            "retention_in_days": 30,
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-gateway-logs"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-gateway-logs",
+              "Project": "chatroom"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "/ecs/chatroom/dev/gateway",
+            "region": "us-west-2"
+          },
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "messagestorage",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:logs:us-west-2:627195602448:log-group:/ecs/chatroom/dev/messagestorage",
+            "deletion_protection_enabled": false,
+            "id": "/ecs/chatroom/dev/messagestorage",
+            "kms_key_id": "",
+            "log_group_class": "STANDARD",
+            "name": "/ecs/chatroom/dev/messagestorage",
+            "name_prefix": "",
+            "region": "us-west-2",
+            "retention_in_days": 30,
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-messagestorage-logs"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagestorage-logs",
+              "Project": "chatroom"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "/ecs/chatroom/dev/messagestorage",
+            "region": "us-west-2"
+          },
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "messagetransmit",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:logs:us-west-2:627195602448:log-group:/ecs/chatroom/dev/messagetransmit",
+            "deletion_protection_enabled": false,
+            "id": "/ecs/chatroom/dev/messagetransmit",
+            "kms_key_id": "",
+            "log_group_class": "STANDARD",
+            "name": "/ecs/chatroom/dev/messagetransmit",
+            "name_prefix": "",
+            "region": "us-west-2",
+            "retention_in_days": 30,
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-messagetransmit-logs"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagetransmit-logs",
+              "Project": "chatroom"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "name": "/ecs/chatroom/dev/messagetransmit",
+            "region": "us-west-2"
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.messagestorage_service",
+      "mode": "managed",
+      "type": "aws_ecs_service",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "arn": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-messagestorage",
+            "availability_zone_rebalancing": "ENABLED",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "deployment_circuit_breaker": [
+              {
+                "enable": false,
+                "rollback": false
+              }
+            ],
+            "deployment_configuration": [
+              {
+                "bake_time_in_minutes": "0",
+                "canary_configuration": [],
+                "lifecycle_hook": [],
+                "linear_configuration": [],
+                "strategy": "ROLLING"
+              }
+            ],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 50,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": true,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": "/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "id": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-messagestorage",
+            "launch_type": "FARGATE",
+            "load_balancer": [],
+            "name": "chatroom-dev-messagestorage",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-0833176ea59989ebd"
+                ],
+                "subnets": [
+                  "subnet-04369b1bdaed3f7ba",
+                  "subnet-04b307ec21f9d002b"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "LATEST",
+            "propagate_tags": "NONE",
+            "region": "us-west-2",
+            "scheduling_strategy": "REPLICA",
+            "service_connect_configuration": [
+              {
+                "access_log_configuration": [],
+                "enabled": true,
+                "log_configuration": [],
+                "namespace": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-yw74ginhaezk6zaz",
+                "service": [
+                  {
+                    "client_alias": [
+                      {
+                        "dns_name": "messagestorage",
+                        "port": 50052,
+                        "test_traffic_rules": []
+                      }
+                    ],
+                    "discovery_name": "messagestorage",
+                    "ingress_port_override": 0,
+                    "port_name": "grpc-messagestorage",
+                    "timeout": [],
+                    "tls": []
+                  }
+                ]
+              }
+            ],
+            "service_registries": [],
+            "sigint_rollback": null,
+            "tags": {
+              "Name": "chatroom-dev-messagestorage"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagestorage",
+              "Project": "chatroom"
+            },
+            "task_definition": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-messagestorage:1",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "name": "chatroom-dev-messagestorage",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_service_discovery_http_namespace.service_connect",
+            "aws_service_discovery_private_dns_namespace.service_connect",
+            "data.aws_ecr_image.messagestorage",
+            "module.ecs_cluster.aws_ecs_cluster.this",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this",
+            "module.messagestorage_service.aws_ecs_task_definition.this",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.rds_mysql.aws_db_instance.this",
+            "module.rds_mysql.aws_db_subnet_group.this",
+            "module.security.aws_security_group.internal_service",
+            "module.security.aws_security_group.rds"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.messagestorage_service",
+      "mode": "managed",
+      "type": "aws_ecs_task_definition",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-messagestorage:1",
+            "arn_without_revision": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-messagestorage",
+            "container_definitions": "[{\"environment\":[{\"name\":\"MESSAGESTORAGE_ADDR\",\"value\":\":50052\"},{\"name\":\"MESSAGESTORAGE_DB_CONN_MAX_IDLE_TIME_MIN\",\"value\":\"5\"},{\"name\":\"MESSAGESTORAGE_DB_CONN_MAX_LIFETIME_MIN\",\"value\":\"30\"},{\"name\":\"MESSAGESTORAGE_DB_HOST\",\"value\":\"chatroom-dev-mysql.cjias2iok297.us-west-2.rds.amazonaws.com\"},{\"name\":\"MESSAGESTORAGE_DB_MAX_IDLE_CONNS\",\"value\":\"10\"},{\"name\":\"MESSAGESTORAGE_DB_MAX_OPEN_CONNS\",\"value\":\"20\"},{\"name\":\"MESSAGESTORAGE_DB_NAME\",\"value\":\"chatroom\"},{\"name\":\"MESSAGESTORAGE_DB_PASSWORD\",\"value\":\"change-me-in-real-usage\"},{\"name\":\"MESSAGESTORAGE_DB_PORT\",\"value\":\"3306\"},{\"name\":\"MESSAGESTORAGE_DB_USER\",\"value\":\"admin\"}],\"essential\":true,\"image\":\"627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-messagestorage:v1\",\"logConfiguration\":{\"logDriver\":\"awslogs\",\"options\":{\"awslogs-group\":\"/ecs/chatroom/dev/messagestorage\",\"awslogs-region\":\"us-west-2\",\"awslogs-stream-prefix\":\"messagestorage\"}},\"mountPoints\":[],\"name\":\"messagestorage\",\"portMappings\":[{\"appProtocol\":\"grpc\",\"containerPort\":50052,\"hostPort\":50052,\"name\":\"grpc-messagestorage\",\"protocol\":\"tcp\"}],\"systemControls\":[],\"volumesFrom\":[]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-execution-role",
+            "family": "chatroom-dev-messagestorage",
+            "id": "chatroom-dev-messagestorage",
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "region": "us-west-2",
+            "requires_compatibilities": [
+              "FARGATE"
+            ],
+            "revision": 1,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-messagestorage-taskdef"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagestorage-taskdef",
+              "Project": "chatroom"
+            },
+            "task_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-role",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "container_definitions"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "family": "chatroom-dev-messagestorage",
+            "region": "us-west-2",
+            "revision": 1
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "data.aws_ecr_image.messagestorage",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.rds_mysql.aws_db_instance.this",
+            "module.rds_mysql.aws_db_subnet_group.this",
+            "module.security.aws_security_group.rds"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.messagetransmit_service",
+      "mode": "managed",
+      "type": "aws_ecs_service",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "arn": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-messagetransmit",
+            "availability_zone_rebalancing": "ENABLED",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "deployment_circuit_breaker": [
+              {
+                "enable": false,
+                "rollback": false
+              }
+            ],
+            "deployment_configuration": [
+              {
+                "bake_time_in_minutes": "0",
+                "canary_configuration": [],
+                "lifecycle_hook": [],
+                "linear_configuration": [],
+                "strategy": "ROLLING"
+              }
+            ],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 50,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": true,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": "/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "id": "arn:aws:ecs:us-west-2:627195602448:service/chatroom-dev-cluster/chatroom-dev-messagetransmit",
+            "launch_type": "FARGATE",
+            "load_balancer": [],
+            "name": "chatroom-dev-messagetransmit",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-0833176ea59989ebd"
+                ],
+                "subnets": [
+                  "subnet-04369b1bdaed3f7ba",
+                  "subnet-04b307ec21f9d002b"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "LATEST",
+            "propagate_tags": "NONE",
+            "region": "us-west-2",
+            "scheduling_strategy": "REPLICA",
+            "service_connect_configuration": [
+              {
+                "access_log_configuration": [],
+                "enabled": true,
+                "log_configuration": [],
+                "namespace": "arn:aws:servicediscovery:us-west-2:627195602448:namespace/ns-yw74ginhaezk6zaz",
+                "service": [
+                  {
+                    "client_alias": [
+                      {
+                        "dns_name": "messagetransmit",
+                        "port": 50053,
+                        "test_traffic_rules": []
+                      }
+                    ],
+                    "discovery_name": "messagetransmit",
+                    "ingress_port_override": 0,
+                    "port_name": "grpc-messagetransmit",
+                    "timeout": [],
+                    "tls": []
+                  }
+                ]
+              }
+            ],
+            "service_registries": [],
+            "sigint_rollback": null,
+            "tags": {
+              "Name": "chatroom-dev-messagetransmit"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagetransmit",
+              "Project": "chatroom"
+            },
+            "task_definition": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-messagetransmit:1",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "cluster": "arn:aws:ecs:us-west-2:627195602448:cluster/chatroom-dev-cluster",
+            "name": "chatroom-dev-messagetransmit",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_service_discovery_http_namespace.service_connect",
+            "aws_service_discovery_private_dns_namespace.service_connect",
+            "data.aws_ecr_image.messagetransmit",
+            "module.ecs_cluster.aws_ecs_cluster.this",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this",
+            "module.messagetransmit_service.aws_ecs_task_definition.this",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.internal_service"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.messagetransmit_service",
+      "mode": "managed",
+      "type": "aws_ecs_task_definition",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-messagetransmit:1",
+            "arn_without_revision": "arn:aws:ecs:us-west-2:627195602448:task-definition/chatroom-dev-messagetransmit",
+            "container_definitions": "[{\"environment\":[{\"name\":\"CHATSERVICE_TARGET\",\"value\":\"chatservice:50051\"},{\"name\":\"MESSAGESTORAGE_TARGET\",\"value\":\"messagestorage:50052\"},{\"name\":\"MESSAGETRANSMIT_ADDR\",\"value\":\":50053\"},{\"name\":\"MESSAGETRANSMIT_CLIENT_TIMEOUT_SEC\",\"value\":\"3\"}],\"essential\":true,\"image\":\"627195602448.dkr.ecr.us-west-2.amazonaws.com/chatroom-dev-messagetransmit:v1\",\"logConfiguration\":{\"logDriver\":\"awslogs\",\"options\":{\"awslogs-stream-prefix\":\"messagetransmit\",\"awslogs-group\":\"/ecs/chatroom/dev/messagetransmit\",\"awslogs-region\":\"us-west-2\"}},\"mountPoints\":[],\"name\":\"messagetransmit\",\"portMappings\":[{\"appProtocol\":\"grpc\",\"containerPort\":50053,\"hostPort\":50053,\"name\":\"grpc-messagetransmit\",\"protocol\":\"tcp\"}],\"systemControls\":[],\"volumesFrom\":[]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-execution-role",
+            "family": "chatroom-dev-messagetransmit",
+            "id": "chatroom-dev-messagetransmit",
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "region": "us-west-2",
+            "requires_compatibilities": [
+              "FARGATE"
+            ],
+            "revision": 1,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": {
+              "Name": "chatroom-dev-messagetransmit-taskdef"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-messagetransmit-taskdef",
+              "Project": "chatroom"
+            },
+            "task_role_arn": "arn:aws:iam::627195602448:role/chatroom-dev-ecs-task-role",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "family": "chatroom-dev-messagetransmit",
+            "region": "us-west-2",
+            "revision": 1
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "data.aws_ecr_image.messagetransmit",
+            "module.iam.aws_iam_role.ecs_task",
+            "module.iam.aws_iam_role.ecs_task_execution",
+            "module.iam.data.aws_iam_policy_document.ecs_task_execution_assume_role",
+            "module.logs.aws_cloudwatch_log_group.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_eip",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "address": null,
+            "allocation_id": "eipalloc-08dee2987bd726947",
+            "arn": "arn:aws:ec2:us-west-2:627195602448:elastic-ip/eipalloc-08dee2987bd726947",
+            "associate_with_private_ip": null,
+            "association_id": "eipassoc-0878acdd9335ff88a",
+            "carrier_ip": "",
+            "customer_owned_ip": "",
+            "customer_owned_ipv4_pool": "",
+            "domain": "vpc",
+            "id": "eipalloc-08dee2987bd726947",
+            "instance": "",
+            "ipam_pool_id": null,
+            "network_border_group": "us-west-2",
+            "network_interface": "eni-03b8d6d1bc34a8ad4",
+            "private_dns": "ip-10-10-0-21.us-west-2.compute.internal",
+            "private_ip": "10.10.0.21",
+            "ptr_record": "",
+            "public_dns": "ec2-184-32-202-201.us-west-2.compute.amazonaws.com",
+            "public_ip": "184.32.202.201",
+            "public_ipv4_pool": "amazon",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-nat-eip-0"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-nat-eip-0",
+              "Project": "chatroom"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAsInJlYWQiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "address": null,
+            "allocation_id": "eipalloc-0aada8f20b10fdd92",
+            "arn": "arn:aws:ec2:us-west-2:627195602448:elastic-ip/eipalloc-0aada8f20b10fdd92",
+            "associate_with_private_ip": null,
+            "association_id": "eipassoc-09fbe4b4763744acc",
+            "carrier_ip": "",
+            "customer_owned_ip": "",
+            "customer_owned_ipv4_pool": "",
+            "domain": "vpc",
+            "id": "eipalloc-0aada8f20b10fdd92",
+            "instance": "",
+            "ipam_pool_id": null,
+            "network_border_group": "us-west-2",
+            "network_interface": "eni-0f05edfa76d6e7def",
+            "private_dns": "ip-10-10-1-140.us-west-2.compute.internal",
+            "private_ip": "10.10.1.140",
+            "ptr_record": "",
+            "public_dns": "ec2-52-11-6-97.us-west-2.compute.amazonaws.com",
+            "public_ip": "52.11.6.97",
+            "public_ipv4_pool": "amazon",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-nat-eip-1"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-nat-eip-1",
+              "Project": "chatroom"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAsInJlYWQiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:internet-gateway/igw-0a5f9ef6bfdc56c34",
+            "id": "igw-0a5f9ef6bfdc56c34",
+            "owner_id": "627195602448",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-igw"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-igw",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_nat_gateway",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "allocation_id": "eipalloc-08dee2987bd726947",
+            "association_id": "eipassoc-0878acdd9335ff88a",
+            "auto_provision_zones": null,
+            "auto_scaling_ips": null,
+            "availability_mode": "zonal",
+            "availability_zone_address": [],
+            "connectivity_type": "public",
+            "id": "nat-019d5343ef5d51e74",
+            "network_interface_id": "eni-03b8d6d1bc34a8ad4",
+            "private_ip": "10.10.0.21",
+            "public_ip": "184.32.202.201",
+            "region": "us-west-2",
+            "regional_nat_gateway_address": [],
+            "regional_nat_gateway_auto_mode": null,
+            "route_table_id": null,
+            "secondary_allocation_ids": [],
+            "secondary_private_ip_address_count": 0,
+            "secondary_private_ip_addresses": [],
+            "subnet_id": "subnet-07afdca43e3825236",
+            "tags": {
+              "Name": "chatroom-dev-nat-0"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-nat-0",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "nat-019d5343ef5d51e74",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "module.network.aws_eip.nat",
+            "module.network.aws_internet_gateway.this",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "allocation_id": "eipalloc-0aada8f20b10fdd92",
+            "association_id": "eipassoc-09fbe4b4763744acc",
+            "auto_provision_zones": null,
+            "auto_scaling_ips": null,
+            "availability_mode": "zonal",
+            "availability_zone_address": [],
+            "connectivity_type": "public",
+            "id": "nat-0824359f13bf50750",
+            "network_interface_id": "eni-0f05edfa76d6e7def",
+            "private_ip": "10.10.1.140",
+            "public_ip": "52.11.6.97",
+            "region": "us-west-2",
+            "regional_nat_gateway_address": [],
+            "regional_nat_gateway_auto_mode": null,
+            "route_table_id": null,
+            "secondary_allocation_ids": [],
+            "secondary_private_ip_address_count": 0,
+            "secondary_private_ip_addresses": [],
+            "subnet_id": "subnet-04227272510c8578b",
+            "tags": {
+              "Name": "chatroom-dev-nat-1"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-nat-1",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "nat-0824359f13bf50750",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "module.network.aws_eip.nat",
+            "module.network.aws_internet_gateway.this",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route",
+      "name": "private_app_default",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "carrier_gateway_id": "",
+            "core_network_arn": "",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": "",
+            "destination_prefix_list_id": "",
+            "egress_only_gateway_id": "",
+            "gateway_id": "",
+            "id": "r-rtb-0f280a2304a78ee711080289494",
+            "instance_id": "",
+            "instance_owner_id": "",
+            "local_gateway_id": "",
+            "nat_gateway_id": "nat-019d5343ef5d51e74",
+            "network_interface_id": "",
+            "origin": "CreateRoute",
+            "region": "us-west-2",
+            "route_table_id": "rtb-0f280a2304a78ee71",
+            "state": "active",
+            "timeouts": null,
+            "transit_gateway_id": "",
+            "vpc_endpoint_id": "",
+            "vpc_peering_connection_id": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": null,
+            "destination_prefix_list_id": null,
+            "region": "us-west-2",
+            "route_table_id": "rtb-0f280a2304a78ee71"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_eip.nat",
+            "module.network.aws_internet_gateway.this",
+            "module.network.aws_nat_gateway.this",
+            "module.network.aws_route_table.private_app",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "carrier_gateway_id": "",
+            "core_network_arn": "",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": "",
+            "destination_prefix_list_id": "",
+            "egress_only_gateway_id": "",
+            "gateway_id": "",
+            "id": "r-rtb-044127aae8d7fda471080289494",
+            "instance_id": "",
+            "instance_owner_id": "",
+            "local_gateway_id": "",
+            "nat_gateway_id": "nat-0824359f13bf50750",
+            "network_interface_id": "",
+            "origin": "CreateRoute",
+            "region": "us-west-2",
+            "route_table_id": "rtb-044127aae8d7fda47",
+            "state": "active",
+            "timeouts": null,
+            "transit_gateway_id": "",
+            "vpc_endpoint_id": "",
+            "vpc_peering_connection_id": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": null,
+            "destination_prefix_list_id": null,
+            "region": "us-west-2",
+            "route_table_id": "rtb-044127aae8d7fda47"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_eip.nat",
+            "module.network.aws_internet_gateway.this",
+            "module.network.aws_nat_gateway.this",
+            "module.network.aws_route_table.private_app",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route",
+      "name": "private_data_default",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "carrier_gateway_id": "",
+            "core_network_arn": "",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": "",
+            "destination_prefix_list_id": "",
+            "egress_only_gateway_id": "",
+            "gateway_id": "",
+            "id": "r-rtb-0b8684b068616d9151080289494",
+            "instance_id": "",
+            "instance_owner_id": "",
+            "local_gateway_id": "",
+            "nat_gateway_id": "nat-019d5343ef5d51e74",
+            "network_interface_id": "",
+            "origin": "CreateRoute",
+            "region": "us-west-2",
+            "route_table_id": "rtb-0b8684b068616d915",
+            "state": "active",
+            "timeouts": null,
+            "transit_gateway_id": "",
+            "vpc_endpoint_id": "",
+            "vpc_peering_connection_id": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": null,
+            "destination_prefix_list_id": null,
+            "region": "us-west-2",
+            "route_table_id": "rtb-0b8684b068616d915"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_eip.nat",
+            "module.network.aws_internet_gateway.this",
+            "module.network.aws_nat_gateway.this",
+            "module.network.aws_route_table.private_data",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "carrier_gateway_id": "",
+            "core_network_arn": "",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": "",
+            "destination_prefix_list_id": "",
+            "egress_only_gateway_id": "",
+            "gateway_id": "",
+            "id": "r-rtb-07f0997538d5887bc1080289494",
+            "instance_id": "",
+            "instance_owner_id": "",
+            "local_gateway_id": "",
+            "nat_gateway_id": "nat-0824359f13bf50750",
+            "network_interface_id": "",
+            "origin": "CreateRoute",
+            "region": "us-west-2",
+            "route_table_id": "rtb-07f0997538d5887bc",
+            "state": "active",
+            "timeouts": null,
+            "transit_gateway_id": "",
+            "vpc_endpoint_id": "",
+            "vpc_peering_connection_id": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": null,
+            "destination_prefix_list_id": null,
+            "region": "us-west-2",
+            "route_table_id": "rtb-07f0997538d5887bc"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_eip.nat",
+            "module.network.aws_internet_gateway.this",
+            "module.network.aws_nat_gateway.this",
+            "module.network.aws_route_table.private_data",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route",
+      "name": "public_internet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "carrier_gateway_id": "",
+            "core_network_arn": "",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": "",
+            "destination_prefix_list_id": "",
+            "egress_only_gateway_id": "",
+            "gateway_id": "igw-0a5f9ef6bfdc56c34",
+            "id": "r-rtb-045dd3fbe313ef2581080289494",
+            "instance_id": "",
+            "instance_owner_id": "",
+            "local_gateway_id": "",
+            "nat_gateway_id": "",
+            "network_interface_id": "",
+            "origin": "CreateRoute",
+            "region": "us-west-2",
+            "route_table_id": "rtb-045dd3fbe313ef258",
+            "state": "active",
+            "timeouts": null,
+            "transit_gateway_id": "",
+            "vpc_endpoint_id": "",
+            "vpc_peering_connection_id": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": null,
+            "destination_prefix_list_id": null,
+            "region": "us-west-2",
+            "route_table_id": "rtb-045dd3fbe313ef258"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_internet_gateway.this",
+            "module.network.aws_route_table.public",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "private_app",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:route-table/rtb-0f280a2304a78ee71",
+            "id": "rtb-0f280a2304a78ee71",
+            "owner_id": "627195602448",
+            "propagating_vgws": [],
+            "region": "us-west-2",
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "nat-019d5343ef5d51e74",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "chatroom-dev-private-app-rt-0"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-app-rt-0",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtb-0f280a2304a78ee71",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:route-table/rtb-044127aae8d7fda47",
+            "id": "rtb-044127aae8d7fda47",
+            "owner_id": "627195602448",
+            "propagating_vgws": [],
+            "region": "us-west-2",
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "nat-0824359f13bf50750",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "chatroom-dev-private-app-rt-1"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-app-rt-1",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtb-044127aae8d7fda47",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "private_data",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:route-table/rtb-0b8684b068616d915",
+            "id": "rtb-0b8684b068616d915",
+            "owner_id": "627195602448",
+            "propagating_vgws": [],
+            "region": "us-west-2",
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "nat-019d5343ef5d51e74",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "chatroom-dev-private-data-rt-0"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-data-rt-0",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtb-0b8684b068616d915",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:route-table/rtb-07f0997538d5887bc",
+            "id": "rtb-07f0997538d5887bc",
+            "owner_id": "627195602448",
+            "propagating_vgws": [],
+            "region": "us-west-2",
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "nat-0824359f13bf50750",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "chatroom-dev-private-data-rt-1"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-data-rt-1",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtb-07f0997538d5887bc",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:route-table/rtb-045dd3fbe313ef258",
+            "id": "rtb-045dd3fbe313ef258",
+            "owner_id": "627195602448",
+            "propagating_vgws": [],
+            "region": "us-west-2",
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "igw-0a5f9ef6bfdc56c34",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "chatroom-dev-public-rt"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-public-rt",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtb-045dd3fbe313ef258",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "private_app",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0fedb36e9246201d3",
+            "region": "us-west-2",
+            "route_table_id": "rtb-0f280a2304a78ee71",
+            "subnet_id": "subnet-04b307ec21f9d002b",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtbassoc-0fedb36e9246201d3",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_route_table.private_app",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-063e514f3237f492a",
+            "region": "us-west-2",
+            "route_table_id": "rtb-044127aae8d7fda47",
+            "subnet_id": "subnet-04369b1bdaed3f7ba",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtbassoc-063e514f3237f492a",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_route_table.private_app",
+            "module.network.aws_subnet.private_app",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "private_data",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0ed5930b0d151bca4",
+            "region": "us-west-2",
+            "route_table_id": "rtb-0b8684b068616d915",
+            "subnet_id": "subnet-09ff0432ad8e7caab",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtbassoc-0ed5930b0d151bca4",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_route_table.private_data",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-051264619d868835e",
+            "region": "us-west-2",
+            "route_table_id": "rtb-07f0997538d5887bc",
+            "subnet_id": "subnet-0726d7ad6ae3b222c",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtbassoc-051264619d868835e",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_route_table.private_data",
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0ae4091b3ec48d424",
+            "region": "us-west-2",
+            "route_table_id": "rtb-045dd3fbe313ef258",
+            "subnet_id": "subnet-07afdca43e3825236",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtbassoc-0ae4091b3ec48d424",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_route_table.public",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0e2cccedbac32e0f2",
+            "region": "us-west-2",
+            "route_table_id": "rtb-045dd3fbe313ef258",
+            "subnet_id": "subnet-04227272510c8578b",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "rtbassoc-0e2cccedbac32e0f2",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.network.aws_route_table.public",
+            "module.network.aws_subnet.public",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "private_app",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:subnet/subnet-04b307ec21f9d002b",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2a",
+            "availability_zone_id": "usw2-az2",
+            "cidr_block": "10.10.10.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-04b307ec21f9d002b",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_ipam_pool_id": null,
+            "ipv6_native": false,
+            "ipv6_netmask_length": null,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "627195602448",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-private-app-0",
+              "Tier": "private-app"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-app-0",
+              "Project": "chatroom",
+              "Tier": "private-app"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "subnet-04b307ec21f9d002b",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:subnet/subnet-04369b1bdaed3f7ba",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2b",
+            "availability_zone_id": "usw2-az1",
+            "cidr_block": "10.10.11.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-04369b1bdaed3f7ba",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_ipam_pool_id": null,
+            "ipv6_native": false,
+            "ipv6_netmask_length": null,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "627195602448",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-private-app-1",
+              "Tier": "private-app"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-app-1",
+              "Project": "chatroom",
+              "Tier": "private-app"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "subnet-04369b1bdaed3f7ba",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "private_data",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:subnet/subnet-09ff0432ad8e7caab",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2a",
+            "availability_zone_id": "usw2-az2",
+            "cidr_block": "10.10.20.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-09ff0432ad8e7caab",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_ipam_pool_id": null,
+            "ipv6_native": false,
+            "ipv6_netmask_length": null,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "627195602448",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-private-data-0",
+              "Tier": "private-data"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-data-0",
+              "Project": "chatroom",
+              "Tier": "private-data"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "subnet-09ff0432ad8e7caab",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:subnet/subnet-0726d7ad6ae3b222c",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2b",
+            "availability_zone_id": "usw2-az1",
+            "cidr_block": "10.10.21.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0726d7ad6ae3b222c",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_ipam_pool_id": null,
+            "ipv6_native": false,
+            "ipv6_netmask_length": null,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "627195602448",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-private-data-1",
+              "Tier": "private-data"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-private-data-1",
+              "Project": "chatroom",
+              "Tier": "private-data"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "subnet-0726d7ad6ae3b222c",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "0",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:subnet/subnet-07afdca43e3825236",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2a",
+            "availability_zone_id": "usw2-az2",
+            "cidr_block": "10.10.0.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-07afdca43e3825236",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_ipam_pool_id": null,
+            "ipv6_native": false,
+            "ipv6_netmask_length": null,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": true,
+            "outpost_arn": "",
+            "owner_id": "627195602448",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-public-0",
+              "Tier": "public"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-public-0",
+              "Project": "chatroom",
+              "Tier": "public"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "subnet-07afdca43e3825236",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        },
+        {
+          "index_key": "1",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:subnet/subnet-04227272510c8578b",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2b",
+            "availability_zone_id": "usw2-az1",
+            "cidr_block": "10.10.1.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-04227272510c8578b",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_ipam_pool_id": null,
+            "ipv6_native": false,
+            "ipv6_netmask_length": null,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": true,
+            "outpost_arn": "",
+            "owner_id": "627195602448",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-public-1",
+              "Tier": "public"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-public-1",
+              "Project": "chatroom",
+              "Tier": "public"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "subnet-04227272510c8578b",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network",
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:vpc/vpc-0dab25c4673aa03a8",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.10.0.0/16",
+            "default_network_acl_id": "acl-0badf73e8d35647a1",
+            "default_route_table_id": "rtb-05879a5436c2b9e01",
+            "default_security_group_id": "sg-09bc31acfa7aa91cd",
+            "dhcp_options_id": "dopt-04c8d1c6dd6cc9fdb",
+            "enable_dns_hostnames": true,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-0dab25c4673aa03a8",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-05879a5436c2b9e01",
+            "owner_id": "627195602448",
+            "region": "us-west-2",
+            "tags": {
+              "Name": "chatroom-dev-vpc"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-vpc",
+              "Project": "chatroom"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "vpc-0dab25c4673aa03a8",
+            "region": "us-west-2"
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.rds_mysql",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "address": "chatroom-dev-mysql.cjias2iok297.us-west-2.rds.amazonaws.com",
+            "allocated_storage": 20,
+            "allow_major_version_upgrade": null,
+            "apply_immediately": false,
+            "arn": "arn:aws:rds:us-west-2:627195602448:db:chatroom-dev-mysql",
+            "auto_minor_version_upgrade": true,
+            "availability_zone": "us-west-2b",
+            "backup_retention_period": 7,
+            "backup_target": "region",
+            "backup_window": "08:49-09:19",
+            "blue_green_update": [],
+            "ca_cert_identifier": "rds-ca-rsa2048-g1",
+            "character_set_name": "",
+            "copy_tags_to_snapshot": false,
+            "custom_iam_instance_profile": "",
+            "customer_owned_ip_enabled": false,
+            "database_insights_mode": "standard",
+            "db_name": "chatroom",
+            "db_subnet_group_name": "chatroom-dev-db-subnet-group",
+            "dedicated_log_volume": false,
+            "delete_automated_backups": true,
+            "deletion_protection": false,
+            "domain": "",
+            "domain_auth_secret_arn": "",
+            "domain_dns_ips": [],
+            "domain_fqdn": "",
+            "domain_iam_role_name": "",
+            "domain_ou": "",
+            "enabled_cloudwatch_logs_exports": [],
+            "endpoint": "chatroom-dev-mysql.cjias2iok297.us-west-2.rds.amazonaws.com:3306",
+            "engine": "mysql",
+            "engine_lifecycle_support": "open-source-rds-extended-support",
+            "engine_version": "8.0",
+            "engine_version_actual": "8.0.45",
+            "final_snapshot_identifier": null,
+            "hosted_zone_id": "Z1PVIF0B656C1W",
+            "iam_database_authentication_enabled": false,
+            "id": "db-4RIF5NLYCIDJD4UC3P7FP3LWJU",
+            "identifier": "chatroom-dev-mysql",
+            "identifier_prefix": "",
+            "instance_class": "db.t4g.micro",
+            "iops": 0,
+            "kms_key_id": "",
+            "latest_restorable_time": "2026-04-17T03:12:08Z",
+            "license_model": "general-public-license",
+            "listener_endpoint": [],
+            "maintenance_window": "sat:11:55-sat:12:25",
+            "manage_master_user_password": null,
+            "master_user_secret": [],
+            "master_user_secret_kms_key_id": null,
+            "max_allocated_storage": 0,
+            "monitoring_interval": 0,
+            "monitoring_role_arn": "",
+            "multi_az": false,
+            "nchar_character_set_name": "",
+            "network_type": "IPV4",
+            "option_group_name": "default:mysql-8-0",
+            "parameter_group_name": "default.mysql8.0",
+            "password": "change-me-in-real-usage",
+            "password_wo": null,
+            "password_wo_version": null,
+            "performance_insights_enabled": false,
+            "performance_insights_kms_key_id": "",
+            "performance_insights_retention_period": 0,
+            "port": 3306,
+            "publicly_accessible": false,
+            "region": "us-west-2",
+            "replica_mode": "",
+            "replicas": [],
+            "replicate_source_db": "",
+            "resource_id": "db-4RIF5NLYCIDJD4UC3P7FP3LWJU",
+            "restore_to_point_in_time": [],
+            "s3_import": [],
+            "skip_final_snapshot": true,
+            "snapshot_identifier": null,
+            "status": "available",
+            "storage_encrypted": false,
+            "storage_throughput": 0,
+            "storage_type": "gp2",
+            "tags": {
+              "Name": "chatroom-dev-mysql"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-mysql",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "timezone": "",
+            "upgrade_rollout_order": "second",
+            "upgrade_storage_config": null,
+            "username": "admin",
+            "vpc_security_group_ids": [
+              "sg-0c39d966d26b02b9d"
+            ]
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "password_wo"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NDgwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this",
+            "module.rds_mysql.aws_db_subnet_group.this",
+            "module.security.aws_security_group.rds"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.rds_mysql",
+      "mode": "managed",
+      "type": "aws_db_subnet_group",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:rds:us-west-2:627195602448:subgrp:chatroom-dev-db-subnet-group",
+            "description": "Managed by Terraform",
+            "id": "chatroom-dev-db-subnet-group",
+            "name": "chatroom-dev-db-subnet-group",
+            "name_prefix": "",
+            "region": "us-west-2",
+            "subnet_ids": [
+              "subnet-0726d7ad6ae3b222c",
+              "subnet-09ff0432ad8e7caab"
+            ],
+            "supported_network_types": [
+              "IPV4"
+            ],
+            "tags": {
+              "Name": "chatroom-dev-db-subnet-group"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-db-subnet-group",
+              "Project": "chatroom"
+            },
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.network.aws_subnet.private_data",
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "alb",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group/sg-04f5ad284078f4bf6",
+            "description": "ALB security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow all outbound",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-04f5ad284078f4bf6",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow HTTP from internet",
+                "from_port": 80,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 80
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow HTTPS from internet",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 443
+              }
+            ],
+            "name": "chatroom-dev-alb-sg",
+            "name_prefix": "",
+            "owner_id": "627195602448",
+            "region": "us-west-2",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "chatroom-dev-alb-sg"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-alb-sg",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sg-04f5ad284078f4bf6",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "gateway",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group/sg-03e7471a286c055fe",
+            "description": "Gateway service security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow all outbound",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-03e7471a286c055fe",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Allow gateway traffic from ALB",
+                "from_port": 8080,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-04f5ad284078f4bf6"
+                ],
+                "self": false,
+                "to_port": 8080
+              }
+            ],
+            "name": "chatroom-dev-gateway-sg",
+            "name_prefix": "",
+            "owner_id": "627195602448",
+            "region": "us-west-2",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "chatroom-dev-gateway-sg"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-gateway-sg",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sg-03e7471a286c055fe",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "internal_service",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group/sg-0833176ea59989ebd",
+            "description": "Internal gRPC services security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow all outbound",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0833176ea59989ebd",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Allow gateway to internal gRPC services",
+                "from_port": 50051,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-03e7471a286c055fe"
+                ],
+                "self": false,
+                "to_port": 50051
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Allow gateway to internal gRPC services",
+                "from_port": 50052,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-03e7471a286c055fe"
+                ],
+                "self": false,
+                "to_port": 50052
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Allow gateway to internal gRPC services",
+                "from_port": 50053,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-03e7471a286c055fe"
+                ],
+                "self": false,
+                "to_port": 50053
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Allow internal service to internal service gRPC",
+                "from_port": 50051,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 50051
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Allow internal service to internal service gRPC",
+                "from_port": 50052,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 50052
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Allow internal service to internal service gRPC",
+                "from_port": 50053,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 50053
+              }
+            ],
+            "name": "chatroom-dev-internal-service-sg",
+            "name_prefix": "",
+            "owner_id": "627195602448",
+            "region": "us-west-2",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "chatroom-dev-internal-service-sg"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-internal-service-sg",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sg-0833176ea59989ebd",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "rds",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group/sg-0c39d966d26b02b9d",
+            "description": "RDS MySQL security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow all outbound",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0c39d966d26b02b9d",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Allow MySQL from internal services",
+                "from_port": 3306,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-0833176ea59989ebd"
+                ],
+                "self": false,
+                "to_port": 3306
+              }
+            ],
+            "name": "chatroom-dev-rds-sg",
+            "name_prefix": "",
+            "owner_id": "627195602448",
+            "region": "us-west-2",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "chatroom-dev-rds-sg"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-rds-sg",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sg-0c39d966d26b02b9d",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "redis",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group/sg-0ef9023a01df1bf99",
+            "description": "Redis security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Allow all outbound",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0ef9023a01df1bf99",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Allow Redis from gateway",
+                "from_port": 6379,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-03e7471a286c055fe"
+                ],
+                "self": false,
+                "to_port": 6379
+              }
+            ],
+            "name": "chatroom-dev-redis-sg",
+            "name_prefix": "",
+            "owner_id": "627195602448",
+            "region": "us-west-2",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "chatroom-dev-redis-sg"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Name": "chatroom-dev-redis-sg",
+              "Project": "chatroom"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0dab25c4673aa03a8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sg-0ef9023a01df1bf99",
+            "region": "us-west-2"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.network.aws_vpc.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_egress_rule",
+      "name": "alb_all_out",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-09bb04c00010742a6",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": "Allow all outbound",
+            "from_port": null,
+            "id": "sgr-09bb04c00010742a6",
+            "ip_protocol": "-1",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "us-west-2",
+            "security_group_id": "sg-04f5ad284078f4bf6",
+            "security_group_rule_id": "sgr-09bb04c00010742a6",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-09bb04c00010742a6",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.alb"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_egress_rule",
+      "name": "gateway_all_out",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-060cbb26f389a75dd",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": "Allow all outbound",
+            "from_port": null,
+            "id": "sgr-060cbb26f389a75dd",
+            "ip_protocol": "-1",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "us-west-2",
+            "security_group_id": "sg-03e7471a286c055fe",
+            "security_group_rule_id": "sgr-060cbb26f389a75dd",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-060cbb26f389a75dd",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.gateway"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_egress_rule",
+      "name": "internal_all_out",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-08f422663cc9ca89d",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": "Allow all outbound",
+            "from_port": null,
+            "id": "sgr-08f422663cc9ca89d",
+            "ip_protocol": "-1",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "us-west-2",
+            "security_group_id": "sg-0833176ea59989ebd",
+            "security_group_rule_id": "sgr-08f422663cc9ca89d",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-08f422663cc9ca89d",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.internal_service"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_egress_rule",
+      "name": "rds_all_out",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-0e82df29011c90989",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": "Allow all outbound",
+            "from_port": null,
+            "id": "sgr-0e82df29011c90989",
+            "ip_protocol": "-1",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "us-west-2",
+            "security_group_id": "sg-0c39d966d26b02b9d",
+            "security_group_rule_id": "sgr-0e82df29011c90989",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-0e82df29011c90989",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.rds"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_egress_rule",
+      "name": "redis_all_out",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-08d2daef033236bf5",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": "Allow all outbound",
+            "from_port": null,
+            "id": "sgr-08d2daef033236bf5",
+            "ip_protocol": "-1",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "us-west-2",
+            "security_group_id": "sg-0ef9023a01df1bf99",
+            "security_group_rule_id": "sgr-08d2daef033236bf5",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-08d2daef033236bf5",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.redis"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "alb_http",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-05ab19df26f7c712f",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": "Allow HTTP from internet",
+            "from_port": 80,
+            "id": "sgr-05ab19df26f7c712f",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "us-west-2",
+            "security_group_id": "sg-04f5ad284078f4bf6",
+            "security_group_rule_id": "sgr-05ab19df26f7c712f",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 80
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-05ab19df26f7c712f",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.alb"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "alb_https",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-065c4f23f3c0d156c",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": "Allow HTTPS from internet",
+            "from_port": 443,
+            "id": "sgr-065c4f23f3c0d156c",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "us-west-2",
+            "security_group_id": "sg-04f5ad284078f4bf6",
+            "security_group_rule_id": "sgr-065c4f23f3c0d156c",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 443
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-065c4f23f3c0d156c",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.alb"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "gateway_from_alb",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-06ba03bb616577a84",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow gateway traffic from ALB",
+            "from_port": 8080,
+            "id": "sgr-06ba03bb616577a84",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-04f5ad284078f4bf6",
+            "region": "us-west-2",
+            "security_group_id": "sg-03e7471a286c055fe",
+            "security_group_rule_id": "sgr-06ba03bb616577a84",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 8080
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-06ba03bb616577a84",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.alb",
+            "module.security.aws_security_group.gateway"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "internal_from_gateway",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "50051",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-0ae1f87b1861a52e2",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow gateway to internal gRPC services",
+            "from_port": 50051,
+            "id": "sgr-0ae1f87b1861a52e2",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-03e7471a286c055fe",
+            "region": "us-west-2",
+            "security_group_id": "sg-0833176ea59989ebd",
+            "security_group_rule_id": "sgr-0ae1f87b1861a52e2",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 50051
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-0ae1f87b1861a52e2",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.gateway",
+            "module.security.aws_security_group.internal_service"
+          ]
+        },
+        {
+          "index_key": "50052",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-0fd604707659f7d4a",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow gateway to internal gRPC services",
+            "from_port": 50052,
+            "id": "sgr-0fd604707659f7d4a",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-03e7471a286c055fe",
+            "region": "us-west-2",
+            "security_group_id": "sg-0833176ea59989ebd",
+            "security_group_rule_id": "sgr-0fd604707659f7d4a",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 50052
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-0fd604707659f7d4a",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.gateway",
+            "module.security.aws_security_group.internal_service"
+          ]
+        },
+        {
+          "index_key": "50053",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-0f0f0a2ec1129343e",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow gateway to internal gRPC services",
+            "from_port": 50053,
+            "id": "sgr-0f0f0a2ec1129343e",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-03e7471a286c055fe",
+            "region": "us-west-2",
+            "security_group_id": "sg-0833176ea59989ebd",
+            "security_group_rule_id": "sgr-0f0f0a2ec1129343e",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 50053
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-0f0f0a2ec1129343e",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.gateway",
+            "module.security.aws_security_group.internal_service"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "internal_from_internal",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "50051",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-00bb7df51049ee219",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow internal service to internal service gRPC",
+            "from_port": 50051,
+            "id": "sgr-00bb7df51049ee219",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-0833176ea59989ebd",
+            "region": "us-west-2",
+            "security_group_id": "sg-0833176ea59989ebd",
+            "security_group_rule_id": "sgr-00bb7df51049ee219",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 50051
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-00bb7df51049ee219",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.internal_service"
+          ]
+        },
+        {
+          "index_key": "50052",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-08bc340f594eab87a",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow internal service to internal service gRPC",
+            "from_port": 50052,
+            "id": "sgr-08bc340f594eab87a",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-0833176ea59989ebd",
+            "region": "us-west-2",
+            "security_group_id": "sg-0833176ea59989ebd",
+            "security_group_rule_id": "sgr-08bc340f594eab87a",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 50052
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-08bc340f594eab87a",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.internal_service"
+          ]
+        },
+        {
+          "index_key": "50053",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-0bd43635921758921",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow internal service to internal service gRPC",
+            "from_port": 50053,
+            "id": "sgr-0bd43635921758921",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-0833176ea59989ebd",
+            "region": "us-west-2",
+            "security_group_id": "sg-0833176ea59989ebd",
+            "security_group_rule_id": "sgr-0bd43635921758921",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 50053
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-0bd43635921758921",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.internal_service"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "rds_from_internal",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-0f88b44ddae2507f4",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow MySQL from internal services",
+            "from_port": 3306,
+            "id": "sgr-0f88b44ddae2507f4",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-0833176ea59989ebd",
+            "region": "us-west-2",
+            "security_group_id": "sg-0c39d966d26b02b9d",
+            "security_group_rule_id": "sgr-0f88b44ddae2507f4",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 3306
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-0f88b44ddae2507f4",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.internal_service",
+            "module.security.aws_security_group.rds"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "redis_from_gateway",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:627195602448:security-group-rule/sgr-0aa9cdfc7ef491ca0",
+            "cidr_ipv4": null,
+            "cidr_ipv6": null,
+            "description": "Allow Redis from gateway",
+            "from_port": 6379,
+            "id": "sgr-0aa9cdfc7ef491ca0",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": "sg-03e7471a286c055fe",
+            "region": "us-west-2",
+            "security_group_id": "sg-0ef9023a01df1bf99",
+            "security_group_rule_id": "sgr-0aa9cdfc7ef491ca0",
+            "tags": null,
+            "tags_all": {
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "chatroom"
+            },
+            "to_port": 6379
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "627195602448",
+            "id": "sgr-0aa9cdfc7ef491ca0",
+            "region": "us-west-2"
+          },
+          "dependencies": [
+            "module.network.aws_vpc.this",
+            "module.security.aws_security_group.gateway",
+            "module.security.aws_security_group.redis"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

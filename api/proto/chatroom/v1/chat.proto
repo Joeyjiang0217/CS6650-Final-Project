@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package chatroom.v1;
+
+option go_package = "github.com/Joeyjiang0217/CS6650-Final-Project/api/gen/chatroom/v1;chatroomv1";
+
+import "chatroom/v1/common.proto";
+
+service ChatService {
+  rpc GetFriendList(GetFriendListRequest) returns (GetFriendListResponse);
+  rpc GetChatSessionList(GetChatSessionListRequest) returns (GetChatSessionListResponse);
+  rpc CreateGroupChatSession(CreateGroupChatSessionRequest) returns (CreateGroupChatSessionResponse);
+  rpc GetChatSessionMembers(GetChatSessionMembersRequest) returns (GetChatSessionMembersResponse);
+  rpc ListSessionMemberIds(ListSessionMemberIdsRequest) returns (ListSessionMemberIdsResponse);
+  rpc IsSessionMember(IsSessionMemberRequest) returns (IsSessionMemberResponse);
+  rpc MarkSessionRead(MarkSessionReadRequest) returns (MarkSessionReadResponse);
+}
+
+message GetFriendListRequest {
+  string user_id = 1;
+}
+
+message GetFriendListResponse {
+  repeated User friends = 1;
+}
+
+message GetChatSessionListRequest {
+  string user_id = 1;
+}
+
+message GetChatSessionListResponse {
+  repeated ChatSessionSummary sessions = 1;
+}
+
+message CreateGroupChatSessionRequest {
+  string creator_id = 1;
+  string name = 2;
+  repeated string member_ids = 3;
+}
+
+message CreateGroupChatSessionResponse {
+  ChatSession session = 1;
+  repeated SessionMember members = 2;
+}
+
+message GetChatSessionMembersRequest {
+  string session_id = 1;
+}
+
+message GetChatSessionMembersResponse {
+  repeated SessionMember members = 1;
+}
+
+message ListSessionMemberIdsRequest {
+  string session_id = 1;
+}
+
+message ListSessionMemberIdsResponse {
+  repeated string user_ids = 1;
+}
+
+message IsSessionMemberRequest {
+  string session_id = 1;
+  string user_id = 2;
+}
+
+message IsSessionMemberResponse {
+  bool is_member = 1;
+}
+
+message MarkSessionReadRequest {
+  string session_id = 1;
+  string user_id = 2;
+  uint64 last_read_seq = 3;
+}
+
+message MarkSessionReadResponse {
+  bool success = 1;
+}
