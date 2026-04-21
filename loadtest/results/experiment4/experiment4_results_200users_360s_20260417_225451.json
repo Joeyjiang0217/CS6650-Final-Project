@@ -1,0 +1,3071 @@
+{
+  "experiment": "failure_injection",
+  "timestamp": "2026-04-17T22:54:51.489229",
+  "config": {
+    "num_users": 200,
+    "duration": 360
+  },
+  "results": {
+    "messages_sent": 329,
+    "messages_succeeded": 300,
+    "messages_failed": 29,
+    "success_rate": 91.1854103343465,
+    "ws_disconnections": 206,
+    "ws_reconnections": 400,
+    "errors": {
+      "HTTP 503": 29
+    },
+    "timeline": [
+      {
+        "time": 0.23307013511657715,
+        "type": "SETUP",
+        "message": "Created session s_1776491320922150438"
+      },
+      {
+        "time": 0.2892470359802246,
+        "type": "WS_CONNECT",
+        "message": "failure_user_0 connected"
+      },
+      {
+        "time": 0.30320119857788086,
+        "type": "WS_CONNECT",
+        "message": "failure_user_1 connected"
+      },
+      {
+        "time": 0.3109292984008789,
+        "type": "WS_CONNECT",
+        "message": "failure_user_2 connected"
+      },
+      {
+        "time": 0.32272911071777344,
+        "type": "WS_CONNECT",
+        "message": "failure_user_3 connected"
+      },
+      {
+        "time": 0.337662935256958,
+        "type": "WS_CONNECT",
+        "message": "failure_user_4 connected"
+      },
+      {
+        "time": 0.34383630752563477,
+        "type": "WS_CONNECT",
+        "message": "failure_user_5 connected"
+      },
+      {
+        "time": 0.3605639934539795,
+        "type": "WS_CONNECT",
+        "message": "failure_user_6 connected"
+      },
+      {
+        "time": 0.373582124710083,
+        "type": "WS_CONNECT",
+        "message": "failure_user_7 connected"
+      },
+      {
+        "time": 0.3815329074859619,
+        "type": "WS_CONNECT",
+        "message": "failure_user_8 connected"
+      },
+      {
+        "time": 0.39394402503967285,
+        "type": "WS_CONNECT",
+        "message": "failure_user_9 connected"
+      },
+      {
+        "time": 0.48677921295166016,
+        "type": "WS_CONNECT",
+        "message": "failure_user_10 connected"
+      },
+      {
+        "time": 0.5035951137542725,
+        "type": "WS_CONNECT",
+        "message": "failure_user_11 connected"
+      },
+      {
+        "time": 0.5273981094360352,
+        "type": "WS_CONNECT",
+        "message": "failure_user_13 connected"
+      },
+      {
+        "time": 0.5275599956512451,
+        "type": "WS_CONNECT",
+        "message": "failure_user_12 connected"
+      },
+      {
+        "time": 0.5515472888946533,
+        "type": "WS_CONNECT",
+        "message": "failure_user_19 connected"
+      },
+      {
+        "time": 0.5516490936279297,
+        "type": "WS_CONNECT",
+        "message": "failure_user_17 connected"
+      },
+      {
+        "time": 0.5549602508544922,
+        "type": "WS_CONNECT",
+        "message": "failure_user_15 connected"
+      },
+      {
+        "time": 0.5550291538238525,
+        "type": "WS_CONNECT",
+        "message": "failure_user_16 connected"
+      },
+      {
+        "time": 0.5550992488861084,
+        "type": "WS_CONNECT",
+        "message": "failure_user_14 connected"
+      },
+      {
+        "time": 0.5551550388336182,
+        "type": "WS_CONNECT",
+        "message": "failure_user_20 connected"
+      },
+      {
+        "time": 0.556318998336792,
+        "type": "WS_CONNECT",
+        "message": "failure_user_18 connected"
+      },
+      {
+        "time": 0.558009147644043,
+        "type": "WS_CONNECT",
+        "message": "failure_user_21 connected"
+      },
+      {
+        "time": 0.5580651760101318,
+        "type": "WS_CONNECT",
+        "message": "failure_user_22 connected"
+      },
+      {
+        "time": 0.5708391666412354,
+        "type": "WS_CONNECT",
+        "message": "failure_user_23 connected"
+      },
+      {
+        "time": 0.5834739208221436,
+        "type": "WS_CONNECT",
+        "message": "failure_user_24 connected"
+      },
+      {
+        "time": 0.6001701354980469,
+        "type": "WS_CONNECT",
+        "message": "failure_user_25 connected"
+      },
+      {
+        "time": 0.6065092086791992,
+        "type": "WS_CONNECT",
+        "message": "failure_user_26 connected"
+      },
+      {
+        "time": 0.6196122169494629,
+        "type": "WS_CONNECT",
+        "message": "failure_user_27 connected"
+      },
+      {
+        "time": 0.6332831382751465,
+        "type": "WS_CONNECT",
+        "message": "failure_user_28 connected"
+      },
+      {
+        "time": 0.651360034942627,
+        "type": "WS_CONNECT",
+        "message": "failure_user_29 connected"
+      },
+      {
+        "time": 0.6570560932159424,
+        "type": "WS_CONNECT",
+        "message": "failure_user_30 connected"
+      },
+      {
+        "time": 0.6733052730560303,
+        "type": "WS_CONNECT",
+        "message": "failure_user_31 connected"
+      },
+      {
+        "time": 0.6776561737060547,
+        "type": "WS_CONNECT",
+        "message": "failure_user_32 connected"
+      },
+      {
+        "time": 0.6884691715240479,
+        "type": "WS_CONNECT",
+        "message": "failure_user_33 connected"
+      },
+      {
+        "time": 0.7058780193328857,
+        "type": "WS_CONNECT",
+        "message": "failure_user_34 connected"
+      },
+      {
+        "time": 0.7169132232666016,
+        "type": "WS_CONNECT",
+        "message": "failure_user_35 connected"
+      },
+      {
+        "time": 0.7263989448547363,
+        "type": "WS_CONNECT",
+        "message": "failure_user_36 connected"
+      },
+      {
+        "time": 0.7393190860748291,
+        "type": "WS_CONNECT",
+        "message": "failure_user_37 connected"
+      },
+      {
+        "time": 0.7560901641845703,
+        "type": "WS_CONNECT",
+        "message": "failure_user_38 connected"
+      },
+      {
+        "time": 0.766876220703125,
+        "type": "WS_CONNECT",
+        "message": "failure_user_39 connected"
+      },
+      {
+        "time": 0.775507926940918,
+        "type": "WS_CONNECT",
+        "message": "failure_user_40 connected"
+      },
+      {
+        "time": 0.7935020923614502,
+        "type": "WS_CONNECT",
+        "message": "failure_user_41 connected"
+      },
+      {
+        "time": 0.8013391494750977,
+        "type": "WS_CONNECT",
+        "message": "failure_user_42 connected"
+      },
+      {
+        "time": 0.8184762001037598,
+        "type": "WS_CONNECT",
+        "message": "failure_user_43 connected"
+      },
+      {
+        "time": 0.8217248916625977,
+        "type": "WS_CONNECT",
+        "message": "failure_user_44 connected"
+      },
+      {
+        "time": 0.8399851322174072,
+        "type": "WS_CONNECT",
+        "message": "failure_user_45 connected"
+      },
+      {
+        "time": 0.8435840606689453,
+        "type": "WS_CONNECT",
+        "message": "failure_user_46 connected"
+      },
+      {
+        "time": 0.8596551418304443,
+        "type": "WS_CONNECT",
+        "message": "failure_user_47 connected"
+      },
+      {
+        "time": 0.86763596534729,
+        "type": "WS_CONNECT",
+        "message": "failure_user_48 connected"
+      },
+      {
+        "time": 0.8869740962982178,
+        "type": "WS_CONNECT",
+        "message": "failure_user_49 connected"
+      },
+      {
+        "time": 0.8931698799133301,
+        "type": "WS_CONNECT",
+        "message": "failure_user_50 connected"
+      },
+      {
+        "time": 0.9020612239837646,
+        "type": "WS_CONNECT",
+        "message": "failure_user_51 connected"
+      },
+      {
+        "time": 1.011512041091919,
+        "type": "WS_CONNECT",
+        "message": "failure_user_52 connected"
+      },
+      {
+        "time": 1.0115420818328857,
+        "type": "WS_CONNECT",
+        "message": "failure_user_53 connected"
+      },
+      {
+        "time": 1.0290958881378174,
+        "type": "WS_CONNECT",
+        "message": "failure_user_54 connected"
+      },
+      {
+        "time": 1.0461781024932861,
+        "type": "WS_CONNECT",
+        "message": "failure_user_55 connected"
+      },
+      {
+        "time": 1.0496101379394531,
+        "type": "WS_CONNECT",
+        "message": "failure_user_56 connected"
+      },
+      {
+        "time": 1.0575900077819824,
+        "type": "WS_CONNECT",
+        "message": "failure_user_58 connected"
+      },
+      {
+        "time": 1.0686390399932861,
+        "type": "WS_CONNECT",
+        "message": "failure_user_63 connected"
+      },
+      {
+        "time": 1.0726211071014404,
+        "type": "WS_CONNECT",
+        "message": "failure_user_59 connected"
+      },
+      {
+        "time": 1.072674036026001,
+        "type": "WS_CONNECT",
+        "message": "failure_user_61 connected"
+      },
+      {
+        "time": 1.07275390625,
+        "type": "WS_CONNECT",
+        "message": "failure_user_64 connected"
+      },
+      {
+        "time": 1.07277512550354,
+        "type": "WS_CONNECT",
+        "message": "failure_user_62 connected"
+      },
+      {
+        "time": 1.072822093963623,
+        "type": "WS_CONNECT",
+        "message": "failure_user_57 connected"
+      },
+      {
+        "time": 1.0728421211242676,
+        "type": "WS_CONNECT",
+        "message": "failure_user_60 connected"
+      },
+      {
+        "time": 1.0827882289886475,
+        "type": "WS_CONNECT",
+        "message": "failure_user_65 connected"
+      },
+      {
+        "time": 1.0989341735839844,
+        "type": "WS_CONNECT",
+        "message": "failure_user_66 connected"
+      },
+      {
+        "time": 1.1150281429290771,
+        "type": "WS_CONNECT",
+        "message": "failure_user_67 connected"
+      },
+      {
+        "time": 1.1376969814300537,
+        "type": "WS_CONNECT",
+        "message": "failure_user_69 connected"
+      },
+      {
+        "time": 1.1461939811706543,
+        "type": "WS_CONNECT",
+        "message": "failure_user_68 connected"
+      },
+      {
+        "time": 1.149111032485962,
+        "type": "WS_CONNECT",
+        "message": "failure_user_70 connected"
+      },
+      {
+        "time": 1.1590380668640137,
+        "type": "WS_CONNECT",
+        "message": "failure_user_71 connected"
+      },
+      {
+        "time": 1.1752610206604004,
+        "type": "WS_CONNECT",
+        "message": "failure_user_72 connected"
+      },
+      {
+        "time": 1.1856601238250732,
+        "type": "WS_CONNECT",
+        "message": "failure_user_73 connected"
+      },
+      {
+        "time": 1.2065510749816895,
+        "type": "WS_CONNECT",
+        "message": "failure_user_74 connected"
+      },
+      {
+        "time": 1.214266061782837,
+        "type": "WS_CONNECT",
+        "message": "failure_user_75 connected"
+      },
+      {
+        "time": 1.2260222434997559,
+        "type": "WS_CONNECT",
+        "message": "failure_user_76 connected"
+      },
+      {
+        "time": 1.234579086303711,
+        "type": "WS_CONNECT",
+        "message": "failure_user_77 connected"
+      },
+      {
+        "time": 1.2456550598144531,
+        "type": "WS_CONNECT",
+        "message": "failure_user_78 connected"
+      },
+      {
+        "time": 1.257634162902832,
+        "type": "WS_CONNECT",
+        "message": "failure_user_79 connected"
+      },
+      {
+        "time": 1.2774231433868408,
+        "type": "WS_CONNECT",
+        "message": "failure_user_80 connected"
+      },
+      {
+        "time": 1.289729118347168,
+        "type": "WS_CONNECT",
+        "message": "failure_user_81 connected"
+      },
+      {
+        "time": 1.2963790893554688,
+        "type": "WS_CONNECT",
+        "message": "failure_user_82 connected"
+      },
+      {
+        "time": 1.309201955795288,
+        "type": "WS_CONNECT",
+        "message": "failure_user_83 connected"
+      },
+      {
+        "time": 1.3255140781402588,
+        "type": "WS_CONNECT",
+        "message": "failure_user_84 connected"
+      },
+      {
+        "time": 1.333327054977417,
+        "type": "WS_CONNECT",
+        "message": "failure_user_85 connected"
+      },
+      {
+        "time": 1.3435490131378174,
+        "type": "WS_CONNECT",
+        "message": "failure_user_86 connected"
+      },
+      {
+        "time": 1.3621790409088135,
+        "type": "WS_CONNECT",
+        "message": "failure_user_87 connected"
+      },
+      {
+        "time": 1.3729679584503174,
+        "type": "WS_CONNECT",
+        "message": "failure_user_88 connected"
+      },
+      {
+        "time": 1.3791382312774658,
+        "type": "WS_CONNECT",
+        "message": "failure_user_89 connected"
+      },
+      {
+        "time": 1.394989013671875,
+        "type": "WS_CONNECT",
+        "message": "failure_user_90 connected"
+      },
+      {
+        "time": 1.4074921607971191,
+        "type": "WS_CONNECT",
+        "message": "failure_user_91 connected"
+      },
+      {
+        "time": 1.4205420017242432,
+        "type": "WS_CONNECT",
+        "message": "failure_user_92 connected"
+      },
+      {
+        "time": 1.433685064315796,
+        "type": "WS_CONNECT",
+        "message": "failure_user_93 connected"
+      },
+      {
+        "time": 1.5354440212249756,
+        "type": "WS_CONNECT",
+        "message": "failure_user_94 connected"
+      },
+      {
+        "time": 1.535644292831421,
+        "type": "WS_CONNECT",
+        "message": "failure_user_95 connected"
+      },
+      {
+        "time": 1.5564930438995361,
+        "type": "WS_CONNECT",
+        "message": "failure_user_96 connected"
+      },
+      {
+        "time": 1.5715351104736328,
+        "type": "WS_CONNECT",
+        "message": "failure_user_97 connected"
+      },
+      {
+        "time": 1.5743920803070068,
+        "type": "WS_CONNECT",
+        "message": "failure_user_98 connected"
+      },
+      {
+        "time": 1.6062500476837158,
+        "type": "WS_CONNECT",
+        "message": "failure_user_101 connected"
+      },
+      {
+        "time": 1.6063182353973389,
+        "type": "WS_CONNECT",
+        "message": "failure_user_99 connected"
+      },
+      {
+        "time": 1.6064152717590332,
+        "type": "WS_CONNECT",
+        "message": "failure_user_103 connected"
+      },
+      {
+        "time": 1.6064729690551758,
+        "type": "WS_CONNECT",
+        "message": "failure_user_106 connected"
+      },
+      {
+        "time": 1.6065270900726318,
+        "type": "WS_CONNECT",
+        "message": "failure_user_100 connected"
+      },
+      {
+        "time": 1.6065900325775146,
+        "type": "WS_CONNECT",
+        "message": "failure_user_105 connected"
+      },
+      {
+        "time": 1.6066391468048096,
+        "type": "WS_CONNECT",
+        "message": "failure_user_104 connected"
+      },
+      {
+        "time": 1.6066761016845703,
+        "type": "WS_CONNECT",
+        "message": "failure_user_102 connected"
+      },
+      {
+        "time": 1.6117990016937256,
+        "type": "WS_CONNECT",
+        "message": "failure_user_107 connected"
+      },
+      {
+        "time": 1.6134860515594482,
+        "type": "WS_CONNECT",
+        "message": "failure_user_108 connected"
+      },
+      {
+        "time": 1.6380460262298584,
+        "type": "WS_CONNECT",
+        "message": "failure_user_109 connected"
+      },
+      {
+        "time": 1.6381618976593018,
+        "type": "WS_CONNECT",
+        "message": "failure_user_110 connected"
+      },
+      {
+        "time": 1.6549723148345947,
+        "type": "WS_CONNECT",
+        "message": "failure_user_111 connected"
+      },
+      {
+        "time": 1.6742150783538818,
+        "type": "WS_CONNECT",
+        "message": "failure_user_112 connected"
+      },
+      {
+        "time": 1.679356336593628,
+        "type": "WS_CONNECT",
+        "message": "failure_user_113 connected"
+      },
+      {
+        "time": 1.6913342475891113,
+        "type": "WS_CONNECT",
+        "message": "failure_user_114 connected"
+      },
+      {
+        "time": 1.7014069557189941,
+        "type": "WS_CONNECT",
+        "message": "failure_user_115 connected"
+      },
+      {
+        "time": 1.717332124710083,
+        "type": "WS_CONNECT",
+        "message": "failure_user_116 connected"
+      },
+      {
+        "time": 1.7322943210601807,
+        "type": "WS_CONNECT",
+        "message": "failure_user_117 connected"
+      },
+      {
+        "time": 1.7354841232299805,
+        "type": "WS_CONNECT",
+        "message": "failure_user_118 connected"
+      },
+      {
+        "time": 1.7536289691925049,
+        "type": "WS_CONNECT",
+        "message": "failure_user_119 connected"
+      },
+      {
+        "time": 1.7576041221618652,
+        "type": "WS_CONNECT",
+        "message": "failure_user_120 connected"
+      },
+      {
+        "time": 1.7850749492645264,
+        "type": "WS_CONNECT",
+        "message": "failure_user_121 connected"
+      },
+      {
+        "time": 1.7882750034332275,
+        "type": "WS_CONNECT",
+        "message": "failure_user_122 connected"
+      },
+      {
+        "time": 1.8108360767364502,
+        "type": "WS_CONNECT",
+        "message": "failure_user_123 connected"
+      },
+      {
+        "time": 1.8325350284576416,
+        "type": "WS_CONNECT",
+        "message": "failure_user_124 connected"
+      },
+      {
+        "time": 1.8339810371398926,
+        "type": "WS_CONNECT",
+        "message": "failure_user_125 connected"
+      },
+      {
+        "time": 1.8513591289520264,
+        "type": "WS_CONNECT",
+        "message": "failure_user_126 connected"
+      },
+      {
+        "time": 1.8630149364471436,
+        "type": "WS_CONNECT",
+        "message": "failure_user_128 connected"
+      },
+      {
+        "time": 1.8679790496826172,
+        "type": "WS_CONNECT",
+        "message": "failure_user_127 connected"
+      },
+      {
+        "time": 1.8703880310058594,
+        "type": "WS_CONNECT",
+        "message": "failure_user_129 connected"
+      },
+      {
+        "time": 1.8825862407684326,
+        "type": "WS_CONNECT",
+        "message": "failure_user_130 connected"
+      },
+      {
+        "time": 1.8980140686035156,
+        "type": "WS_CONNECT",
+        "message": "failure_user_131 connected"
+      },
+      {
+        "time": 1.9070520401000977,
+        "type": "WS_CONNECT",
+        "message": "failure_user_132 connected"
+      },
+      {
+        "time": 1.9205050468444824,
+        "type": "WS_CONNECT",
+        "message": "failure_user_133 connected"
+      },
+      {
+        "time": 1.9299211502075195,
+        "type": "WS_CONNECT",
+        "message": "failure_user_134 connected"
+      },
+      {
+        "time": 1.9414432048797607,
+        "type": "WS_CONNECT",
+        "message": "failure_user_135 connected"
+      },
+      {
+        "time": 1.963865041732788,
+        "type": "WS_CONNECT",
+        "message": "failure_user_136 connected"
+      },
+      {
+        "time": 2.0603270530700684,
+        "type": "WS_CONNECT",
+        "message": "failure_user_137 connected"
+      },
+      {
+        "time": 2.076343059539795,
+        "type": "WS_CONNECT",
+        "message": "failure_user_138 connected"
+      },
+      {
+        "time": 2.0804121494293213,
+        "type": "WS_CONNECT",
+        "message": "failure_user_139 connected"
+      },
+      {
+        "time": 2.101600170135498,
+        "type": "WS_CONNECT",
+        "message": "failure_user_140 connected"
+      },
+      {
+        "time": 2.107058048248291,
+        "type": "WS_CONNECT",
+        "message": "failure_user_146 connected"
+      },
+      {
+        "time": 2.1169509887695312,
+        "type": "WS_CONNECT",
+        "message": "failure_user_141 connected"
+      },
+      {
+        "time": 2.1188111305236816,
+        "type": "WS_CONNECT",
+        "message": "failure_user_143 connected"
+      },
+      {
+        "time": 2.1229560375213623,
+        "type": "WS_CONNECT",
+        "message": "failure_user_147 connected"
+      },
+      {
+        "time": 2.124817132949829,
+        "type": "WS_CONNECT",
+        "message": "failure_user_144 connected"
+      },
+      {
+        "time": 2.1289889812469482,
+        "type": "WS_CONNECT",
+        "message": "failure_user_149 connected"
+      },
+      {
+        "time": 2.1290812492370605,
+        "type": "WS_CONNECT",
+        "message": "failure_user_148 connected"
+      },
+      {
+        "time": 2.1291263103485107,
+        "type": "WS_CONNECT",
+        "message": "failure_user_150 connected"
+      },
+      {
+        "time": 2.1291661262512207,
+        "type": "WS_CONNECT",
+        "message": "failure_user_142 connected"
+      },
+      {
+        "time": 2.129204034805298,
+        "type": "WS_CONNECT",
+        "message": "failure_user_145 connected"
+      },
+      {
+        "time": 2.1331069469451904,
+        "type": "WS_CONNECT",
+        "message": "failure_user_151 connected"
+      },
+      {
+        "time": 2.157982110977173,
+        "type": "WS_CONNECT",
+        "message": "failure_user_152 connected"
+      },
+      {
+        "time": 2.169316053390503,
+        "type": "WS_CONNECT",
+        "message": "failure_user_153 connected"
+      },
+      {
+        "time": 2.1762030124664307,
+        "type": "WS_CONNECT",
+        "message": "failure_user_154 connected"
+      },
+      {
+        "time": 2.198207139968872,
+        "type": "WS_CONNECT",
+        "message": "failure_user_155 connected"
+      },
+      {
+        "time": 2.2003471851348877,
+        "type": "WS_CONNECT",
+        "message": "failure_user_156 connected"
+      },
+      {
+        "time": 2.218736171722412,
+        "type": "WS_CONNECT",
+        "message": "failure_user_157 connected"
+      },
+      {
+        "time": 2.2247979640960693,
+        "type": "WS_CONNECT",
+        "message": "failure_user_158 connected"
+      },
+      {
+        "time": 2.236260175704956,
+        "type": "WS_CONNECT",
+        "message": "failure_user_159 connected"
+      },
+      {
+        "time": 2.2495031356811523,
+        "type": "WS_CONNECT",
+        "message": "failure_user_160 connected"
+      },
+      {
+        "time": 2.262726306915283,
+        "type": "WS_CONNECT",
+        "message": "failure_user_161 connected"
+      },
+      {
+        "time": 2.282686948776245,
+        "type": "WS_CONNECT",
+        "message": "failure_user_162 connected"
+      },
+      {
+        "time": 2.2919631004333496,
+        "type": "WS_CONNECT",
+        "message": "failure_user_163 connected"
+      },
+      {
+        "time": 2.2984540462493896,
+        "type": "WS_CONNECT",
+        "message": "failure_user_164 connected"
+      },
+      {
+        "time": 2.314284086227417,
+        "type": "WS_CONNECT",
+        "message": "failure_user_165 connected"
+      },
+      {
+        "time": 2.331388235092163,
+        "type": "WS_CONNECT",
+        "message": "failure_user_166 connected"
+      },
+      {
+        "time": 2.3399062156677246,
+        "type": "WS_CONNECT",
+        "message": "failure_user_167 connected"
+      },
+      {
+        "time": 2.3475730419158936,
+        "type": "WS_CONNECT",
+        "message": "failure_user_168 connected"
+      },
+      {
+        "time": 2.3626320362091064,
+        "type": "WS_CONNECT",
+        "message": "failure_user_169 connected"
+      },
+      {
+        "time": 2.37251615524292,
+        "type": "WS_CONNECT",
+        "message": "failure_user_170 connected"
+      },
+      {
+        "time": 2.3937079906463623,
+        "type": "WS_CONNECT",
+        "message": "failure_user_171 connected"
+      },
+      {
+        "time": 2.400336265563965,
+        "type": "WS_CONNECT",
+        "message": "failure_user_172 connected"
+      },
+      {
+        "time": 2.413560152053833,
+        "type": "WS_CONNECT",
+        "message": "failure_user_173 connected"
+      },
+      {
+        "time": 2.4223480224609375,
+        "type": "WS_CONNECT",
+        "message": "failure_user_174 connected"
+      },
+      {
+        "time": 2.4362621307373047,
+        "type": "WS_CONNECT",
+        "message": "failure_user_175 connected"
+      },
+      {
+        "time": 2.448857069015503,
+        "type": "WS_CONNECT",
+        "message": "failure_user_176 connected"
+      },
+      {
+        "time": 2.462151288986206,
+        "type": "WS_CONNECT",
+        "message": "failure_user_177 connected"
+      },
+      {
+        "time": 2.4707322120666504,
+        "type": "WS_CONNECT",
+        "message": "failure_user_178 connected"
+      },
+      {
+        "time": 2.482206106185913,
+        "type": "WS_CONNECT",
+        "message": "failure_user_179 connected"
+      },
+      {
+        "time": 2.5848991870880127,
+        "type": "WS_CONNECT",
+        "message": "failure_user_180 connected"
+      },
+      {
+        "time": 2.5849568843841553,
+        "type": "WS_CONNECT",
+        "message": "failure_user_181 connected"
+      },
+      {
+        "time": 2.6026980876922607,
+        "type": "WS_CONNECT",
+        "message": "failure_user_182 connected"
+      },
+      {
+        "time": 2.6189849376678467,
+        "type": "WS_CONNECT",
+        "message": "failure_user_183 connected"
+      },
+      {
+        "time": 2.6328160762786865,
+        "type": "WS_CONNECT",
+        "message": "failure_user_187 connected"
+      },
+      {
+        "time": 2.6488261222839355,
+        "type": "WS_CONNECT",
+        "message": "failure_user_184 connected"
+      },
+      {
+        "time": 2.6489012241363525,
+        "type": "WS_CONNECT",
+        "message": "failure_user_188 connected"
+      },
+      {
+        "time": 2.648970127105713,
+        "type": "WS_CONNECT",
+        "message": "failure_user_192 connected"
+      },
+      {
+        "time": 2.6490139961242676,
+        "type": "WS_CONNECT",
+        "message": "failure_user_190 connected"
+      },
+      {
+        "time": 2.6490702629089355,
+        "type": "WS_CONNECT",
+        "message": "failure_user_186 connected"
+      },
+      {
+        "time": 2.6491079330444336,
+        "type": "WS_CONNECT",
+        "message": "failure_user_191 connected"
+      },
+      {
+        "time": 2.6491611003875732,
+        "type": "WS_CONNECT",
+        "message": "failure_user_189 connected"
+      },
+      {
+        "time": 2.6492111682891846,
+        "type": "WS_CONNECT",
+        "message": "failure_user_185 connected"
+      },
+      {
+        "time": 2.6505401134490967,
+        "type": "WS_CONNECT",
+        "message": "failure_user_193 connected"
+      },
+      {
+        "time": 2.6671953201293945,
+        "type": "WS_CONNECT",
+        "message": "failure_user_194 connected"
+      },
+      {
+        "time": 2.6801133155822754,
+        "type": "WS_CONNECT",
+        "message": "failure_user_195 connected"
+      },
+      {
+        "time": 2.6895010471343994,
+        "type": "WS_CONNECT",
+        "message": "failure_user_196 connected"
+      },
+      {
+        "time": 2.701996088027954,
+        "type": "WS_CONNECT",
+        "message": "failure_user_197 connected"
+      },
+      {
+        "time": 2.7093071937561035,
+        "type": "WS_CONNECT",
+        "message": "failure_user_198 connected"
+      },
+      {
+        "time": 2.7217750549316406,
+        "type": "WS_CONNECT",
+        "message": "failure_user_199 connected"
+      },
+      {
+        "time": 5.686464071273804,
+        "type": "SETUP",
+        "message": "All clients started"
+      },
+      {
+        "time": 5.687194108963013,
+        "type": "TEST_START",
+        "message": "Continuous message sending started"
+      },
+      {
+        "time": 170.39290595054626,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_146 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39305925369263,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_159 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39313912391663,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_166 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39320921897888,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_167 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39324426651,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_154 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39393997192383,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_1 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39405918121338,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_10 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3941671848297,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_156 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3942060470581,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_149 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39422607421875,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_148 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39439511299133,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_150 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39441514015198,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_13 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39450597763062,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_173 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39480924606323,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_184 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39490628242493,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_161 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39494824409485,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_18 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3950011730194,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_153 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39501810073853,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_176 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39503526687622,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_183 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39505219459534,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_19 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39508414268494,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_185 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3951060771942,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_169 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3951621055603,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_171 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39518117904663,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_175 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3951952457428,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_14 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39522314071655,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_180 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39523720741272,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_187 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3952660560608,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_158 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39528131484985,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_174 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3953080177307,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_164 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3953342437744,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_160 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39534902572632,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_181 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39585208892822,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_178 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39592599868774,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_199 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39594507217407,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_22 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39596700668335,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_192 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3960371017456,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_33 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3960621356964,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_38 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3960840702057,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_198 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39610314369202,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_29 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39613795280457,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_190 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39628911018372,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_26 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.396311044693,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_41 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3963270187378,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_197 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39635610580444,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_44 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39648723602295,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_20 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3965151309967,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_27 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39653706550598,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_4 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39775204658508,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_34 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39777302742004,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_23 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39779710769653,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_53 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39781308174133,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_48 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39782619476318,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_3 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39786911010742,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_49 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39789700508118,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_42 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39794516563416,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_63 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39827823638916,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_28 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39829301834106,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_0 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39847612380981,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_11 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3986051082611,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_64 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39861822128296,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_8 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39863920211792,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_165 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3986611366272,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_162 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39867401123047,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_172 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39876914024353,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_100 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39878106117249,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_54 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39879298210144,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_163 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3988230228424,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_155 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3988320827484,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_107 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39884114265442,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_109 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39885425567627,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_115 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39887118339539,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_12 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39889526367188,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_16 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39890909194946,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_102 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3989291191101,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_152 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39896607398987,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_157 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39898109436035,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_147 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3990080356598,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_170 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39902210235596,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_15 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3990399837494,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_168 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39905524253845,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_151 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.39906525611877,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_114 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.3990762233734,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_40 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40275311470032,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_104 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40303015708923,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_179 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40310716629028,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_177 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40313029289246,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_193 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40317797660828,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_188 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40319204330444,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_117 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4032199382782,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_17 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40323615074158,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_191 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40328812599182,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_120 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40330290794373,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_186 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40335512161255,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_123 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40337896347046,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_189 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40343928337097,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_118 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40346503257751,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_182 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40347909927368,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_122 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40349793434143,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_116 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40351009368896,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_127 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4035210609436,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_112 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4058392047882,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_196 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40587329864502,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_2 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4059031009674,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_129 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40592789649963,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_30 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40594816207886,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_24 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40601110458374,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_194 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40606212615967,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_143 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40607523918152,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_126 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40624690055847,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_37 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40630102157593,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_195 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40632510185242,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_133 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40636491775513,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_108 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4063858985901,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_128 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40644311904907,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_121 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40645813941956,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_103 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40648698806763,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_106 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40650010108948,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_110 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40652918815613,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_132 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4065442085266,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_142 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40665698051453,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_137 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40667390823364,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_25 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40669107437134,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_39 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40670609474182,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_21 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40677404403687,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_36 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40681290626526,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_101 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40682911872864,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_32 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40684700012207,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_45 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4068660736084,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_43 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4068832397461,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_125 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40691614151,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_47 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4069299697876,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_71 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40694308280945,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_119 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40695714950562,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_131 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40697026252747,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_31 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4069812297821,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_46 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40791821479797,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_51 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.40795016288757,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_35 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4080171585083,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_80 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4099280834198,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_105 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41000819206238,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_141 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41002225875854,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_6 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41004610061646,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_130 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41006112098694,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_134 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41008114814758,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_56 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41009426116943,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_135 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4101800918579,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_59 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41019797325134,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_138 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41030621528625,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_144 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.410325050354,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_9 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4105842113495,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_75 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41068506240845,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_139 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41071796417236,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_65 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41073513031006,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_81 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4107460975647,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_52 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41076612472534,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_70 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41077399253845,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_5 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41079020500183,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_145 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41079807281494,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_7 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41081714630127,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_74 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4108271598816,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_94 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41083812713623,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_124 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41085124015808,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_62 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4108691215515,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_79 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41087698936462,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_60 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41106009483337,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_91 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41107511520386,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_111 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41109204292297,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_136 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41110610961914,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_82 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4111180305481,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_72 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4111270904541,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_93 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41114401817322,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_97 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41115808486938,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_85 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41116905212402,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_95 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41118216514587,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_84 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4112331867218,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_90 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41125416755676,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_73 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41126418113708,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_50 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41128516197205,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_57 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41129302978516,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_88 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41131496429443,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_76 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41132426261902,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_66 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41134428977966,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_58 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41136002540588,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_77 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41136693954468,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_96 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41138410568237,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_87 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4113962650299,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_61 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41140508651733,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_68 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41142416000366,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_99 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4114329814911,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_113 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41144609451294,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_140 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4114601612091,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_69 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41147208213806,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_83 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4115059375763,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_89 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4115161895752,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_92 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41153621673584,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_78 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41155886650085,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_67 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41157007217407,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_98 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.41158199310303,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_55 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 170.4115982055664,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_86 disconnected: Connection to remote host was lost."
+      },
+      {
+        "time": 171.55900692939758,
+        "type": "WS_CONNECT",
+        "message": "failure_user_185 connected"
+      },
+      {
+        "time": 171.55921721458435,
+        "type": "WS_CONNECT",
+        "message": "failure_user_183 connected"
+      },
+      {
+        "time": 171.5596981048584,
+        "type": "WS_CONNECT",
+        "message": "failure_user_12 connected"
+      },
+      {
+        "time": 171.55981016159058,
+        "type": "WS_CONNECT",
+        "message": "failure_user_150 connected"
+      },
+      {
+        "time": 171.55999898910522,
+        "type": "WS_CONNECT",
+        "message": "failure_user_109 connected"
+      },
+      {
+        "time": 171.56332325935364,
+        "type": "WS_CONNECT",
+        "message": "failure_user_166 connected"
+      },
+      {
+        "time": 171.58068919181824,
+        "type": "WS_CONNECT",
+        "message": "failure_user_44 connected"
+      },
+      {
+        "time": 171.5807180404663,
+        "type": "WS_CONNECT",
+        "message": "failure_user_199 connected"
+      },
+      {
+        "time": 171.5810031890869,
+        "type": "WS_CONNECT",
+        "message": "failure_user_184 connected"
+      },
+      {
+        "time": 171.58101725578308,
+        "type": "WS_CONNECT",
+        "message": "failure_user_149 connected"
+      },
+      {
+        "time": 171.58104920387268,
+        "type": "WS_CONNECT",
+        "message": "failure_user_28 connected"
+      },
+      {
+        "time": 171.58115315437317,
+        "type": "WS_CONNECT",
+        "message": "failure_user_167 connected"
+      },
+      {
+        "time": 171.58130311965942,
+        "type": "WS_CONNECT",
+        "message": "failure_user_120 connected"
+      },
+      {
+        "time": 171.58140802383423,
+        "type": "WS_CONNECT",
+        "message": "failure_user_51 connected"
+      },
+      {
+        "time": 171.58142590522766,
+        "type": "WS_CONNECT",
+        "message": "failure_user_102 connected"
+      },
+      {
+        "time": 171.58855414390564,
+        "type": "WS_CONNECT",
+        "message": "failure_user_197 connected"
+      },
+      {
+        "time": 171.5885992050171,
+        "type": "WS_CONNECT",
+        "message": "failure_user_174 connected"
+      },
+      {
+        "time": 171.5886881351471,
+        "type": "WS_CONNECT",
+        "message": "failure_user_171 connected"
+      },
+      {
+        "time": 171.58883619308472,
+        "type": "WS_CONNECT",
+        "message": "failure_user_177 connected"
+      },
+      {
+        "time": 171.58885097503662,
+        "type": "WS_CONNECT",
+        "message": "failure_user_137 connected"
+      },
+      {
+        "time": 171.58888030052185,
+        "type": "WS_CONNECT",
+        "message": "failure_user_116 connected"
+      },
+      {
+        "time": 171.58890223503113,
+        "type": "WS_CONNECT",
+        "message": "failure_user_20 connected"
+      },
+      {
+        "time": 171.58896899223328,
+        "type": "WS_CONNECT",
+        "message": "failure_user_40 connected"
+      },
+      {
+        "time": 171.58907008171082,
+        "type": "WS_CONNECT",
+        "message": "failure_user_13 connected"
+      },
+      {
+        "time": 171.58909606933594,
+        "type": "WS_CONNECT",
+        "message": "failure_user_160 connected"
+      },
+      {
+        "time": 171.58916211128235,
+        "type": "WS_CONNECT",
+        "message": "failure_user_26 connected"
+      },
+      {
+        "time": 171.58920907974243,
+        "type": "WS_CONNECT",
+        "message": "failure_user_117 connected"
+      },
+      {
+        "time": 171.58931517601013,
+        "type": "WS_CONNECT",
+        "message": "failure_user_14 connected"
+      },
+      {
+        "time": 171.58934211730957,
+        "type": "WS_CONNECT",
+        "message": "failure_user_156 connected"
+      },
+      {
+        "time": 171.58976793289185,
+        "type": "WS_CONNECT",
+        "message": "failure_user_187 connected"
+      },
+      {
+        "time": 171.59245896339417,
+        "type": "WS_CONNECT",
+        "message": "failure_user_49 connected"
+      },
+      {
+        "time": 171.5924789905548,
+        "type": "WS_CONNECT",
+        "message": "failure_user_23 connected"
+      },
+      {
+        "time": 171.59253311157227,
+        "type": "WS_CONNECT",
+        "message": "failure_user_43 connected"
+      },
+      {
+        "time": 171.59256196022034,
+        "type": "WS_CONNECT",
+        "message": "failure_user_62 connected"
+      },
+      {
+        "time": 171.59265422821045,
+        "type": "WS_CONNECT",
+        "message": "failure_user_10 connected"
+      },
+      {
+        "time": 171.59269094467163,
+        "type": "WS_CONNECT",
+        "message": "failure_user_125 connected"
+      },
+      {
+        "time": 171.5928180217743,
+        "type": "WS_CONNECT",
+        "message": "failure_user_162 connected"
+      },
+      {
+        "time": 171.59284090995789,
+        "type": "WS_CONNECT",
+        "message": "failure_user_54 connected"
+      },
+      {
+        "time": 171.59302926063538,
+        "type": "WS_CONNECT",
+        "message": "failure_user_48 connected"
+      },
+      {
+        "time": 171.5930540561676,
+        "type": "WS_CONNECT",
+        "message": "failure_user_8 connected"
+      },
+      {
+        "time": 171.5931420326233,
+        "type": "WS_CONNECT",
+        "message": "failure_user_24 connected"
+      },
+      {
+        "time": 171.59317302703857,
+        "type": "WS_CONNECT",
+        "message": "failure_user_157 connected"
+      },
+      {
+        "time": 171.59335803985596,
+        "type": "WS_CONNECT",
+        "message": "failure_user_193 connected"
+      },
+      {
+        "time": 171.5934021472931,
+        "type": "WS_CONNECT",
+        "message": "failure_user_132 connected"
+      },
+      {
+        "time": 171.59343099594116,
+        "type": "WS_CONNECT",
+        "message": "failure_user_35 connected"
+      },
+      {
+        "time": 171.5934522151947,
+        "type": "WS_CONNECT",
+        "message": "failure_user_175 connected"
+      },
+      {
+        "time": 171.5934820175171,
+        "type": "WS_CONNECT",
+        "message": "failure_user_31 connected"
+      },
+      {
+        "time": 171.59493398666382,
+        "type": "WS_CONNECT",
+        "message": "failure_user_27 connected"
+      },
+      {
+        "time": 171.59526705741882,
+        "type": "WS_CONNECT",
+        "message": "failure_user_32 connected"
+      },
+      {
+        "time": 171.5953722000122,
+        "type": "WS_CONNECT",
+        "message": "failure_user_4 connected"
+      },
+      {
+        "time": 171.595397233963,
+        "type": "WS_CONNECT",
+        "message": "failure_user_107 connected"
+      },
+      {
+        "time": 171.59559202194214,
+        "type": "WS_CONNECT",
+        "message": "failure_user_0 connected"
+      },
+      {
+        "time": 171.59576392173767,
+        "type": "WS_CONNECT",
+        "message": "failure_user_29 connected"
+      },
+      {
+        "time": 171.59644317626953,
+        "type": "WS_CONNECT",
+        "message": "failure_user_146 connected"
+      },
+      {
+        "time": 171.61460208892822,
+        "type": "WS_CONNECT",
+        "message": "failure_user_163 connected"
+      },
+      {
+        "time": 171.61462092399597,
+        "type": "WS_CONNECT",
+        "message": "failure_user_61 connected"
+      },
+      {
+        "time": 171.614684343338,
+        "type": "WS_CONNECT",
+        "message": "failure_user_158 connected"
+      },
+      {
+        "time": 171.61641597747803,
+        "type": "WS_CONNECT",
+        "message": "failure_user_105 connected"
+      },
+      {
+        "time": 171.6169672012329,
+        "type": "WS_CONNECT",
+        "message": "failure_user_19 connected"
+      },
+      {
+        "time": 171.61697506904602,
+        "type": "WS_CONNECT",
+        "message": "failure_user_189 connected"
+      },
+      {
+        "time": 171.61840105056763,
+        "type": "WS_CONNECT",
+        "message": "failure_user_17 connected"
+      },
+      {
+        "time": 171.618901014328,
+        "type": "WS_CONNECT",
+        "message": "failure_user_77 connected"
+      },
+      {
+        "time": 171.61942720413208,
+        "type": "WS_CONNECT",
+        "message": "failure_user_178 connected"
+      },
+      {
+        "time": 171.6194372177124,
+        "type": "WS_CONNECT",
+        "message": "failure_user_136 connected"
+      },
+      {
+        "time": 171.61988520622253,
+        "type": "WS_CONNECT",
+        "message": "failure_user_159 connected"
+      },
+      {
+        "time": 171.62127995491028,
+        "type": "WS_CONNECT",
+        "message": "failure_user_131 connected"
+      },
+      {
+        "time": 171.6225872039795,
+        "type": "WS_CONNECT",
+        "message": "failure_user_55 connected"
+      },
+      {
+        "time": 171.62305307388306,
+        "type": "WS_CONNECT",
+        "message": "failure_user_70 connected"
+      },
+      {
+        "time": 171.62409114837646,
+        "type": "WS_CONNECT",
+        "message": "failure_user_100 connected"
+      },
+      {
+        "time": 171.62512612342834,
+        "type": "WS_CONNECT",
+        "message": "failure_user_3 connected"
+      },
+      {
+        "time": 171.62565517425537,
+        "type": "WS_CONNECT",
+        "message": "failure_user_155 connected"
+      },
+      {
+        "time": 171.6271469593048,
+        "type": "WS_CONNECT",
+        "message": "failure_user_118 connected"
+      },
+      {
+        "time": 171.62716507911682,
+        "type": "WS_CONNECT",
+        "message": "failure_user_45 connected"
+      },
+      {
+        "time": 171.62766528129578,
+        "type": "WS_CONNECT",
+        "message": "failure_user_11 connected"
+      },
+      {
+        "time": 171.62815117835999,
+        "type": "WS_CONNECT",
+        "message": "failure_user_126 connected"
+      },
+      {
+        "time": 171.62815690040588,
+        "type": "WS_CONNECT",
+        "message": "failure_user_71 connected"
+      },
+      {
+        "time": 171.62866401672363,
+        "type": "WS_CONNECT",
+        "message": "failure_user_111 connected"
+      },
+      {
+        "time": 171.62926316261292,
+        "type": "WS_CONNECT",
+        "message": "failure_user_172 connected"
+      },
+      {
+        "time": 171.62927317619324,
+        "type": "WS_CONNECT",
+        "message": "failure_user_97 connected"
+      },
+      {
+        "time": 171.62982416152954,
+        "type": "WS_CONNECT",
+        "message": "failure_user_106 connected"
+      },
+      {
+        "time": 171.62985396385193,
+        "type": "WS_CONNECT",
+        "message": "failure_user_57 connected"
+      },
+      {
+        "time": 171.63080024719238,
+        "type": "WS_CONNECT",
+        "message": "failure_user_76 connected"
+      },
+      {
+        "time": 171.63080716133118,
+        "type": "WS_CONNECT",
+        "message": "failure_user_140 connected"
+      },
+      {
+        "time": 171.6326231956482,
+        "type": "WS_CONNECT",
+        "message": "failure_user_84 connected"
+      },
+      {
+        "time": 171.633052110672,
+        "type": "WS_CONNECT",
+        "message": "failure_user_152 connected"
+      },
+      {
+        "time": 171.63305807113647,
+        "type": "WS_CONNECT",
+        "message": "failure_user_98 connected"
+      },
+      {
+        "time": 171.63488507270813,
+        "type": "WS_CONNECT",
+        "message": "failure_user_34 connected"
+      },
+      {
+        "time": 171.63584113121033,
+        "type": "WS_CONNECT",
+        "message": "failure_user_190 connected"
+      },
+      {
+        "time": 171.63623118400574,
+        "type": "WS_CONNECT",
+        "message": "failure_user_75 connected"
+      },
+      {
+        "time": 171.63919520378113,
+        "type": "WS_CONNECT",
+        "message": "failure_user_78 connected"
+      },
+      {
+        "time": 171.63962125778198,
+        "type": "WS_CONNECT",
+        "message": "failure_user_99 connected"
+      },
+      {
+        "time": 171.64101195335388,
+        "type": "WS_CONNECT",
+        "message": "failure_user_66 connected"
+      },
+      {
+        "time": 171.6442530155182,
+        "type": "WS_CONNECT",
+        "message": "failure_user_115 connected"
+      },
+      {
+        "time": 171.64918208122253,
+        "type": "WS_CONNECT",
+        "message": "failure_user_67 connected"
+      },
+      {
+        "time": 171.66670203208923,
+        "type": "WS_CONNECT",
+        "message": "failure_user_151 connected"
+      },
+      {
+        "time": 171.66691517829895,
+        "type": "WS_CONNECT",
+        "message": "failure_user_22 connected"
+      },
+      {
+        "time": 171.67721605300903,
+        "type": "WS_CONNECT",
+        "message": "failure_user_110 connected"
+      },
+      {
+        "time": 171.68707513809204,
+        "type": "WS_CONNECT",
+        "message": "failure_user_89 connected"
+      },
+      {
+        "time": 171.68755912780762,
+        "type": "WS_CONNECT",
+        "message": "failure_user_6 connected"
+      },
+      {
+        "time": 171.69474411010742,
+        "type": "WS_CONNECT",
+        "message": "failure_user_41 connected"
+      },
+      {
+        "time": 171.70855498313904,
+        "type": "WS_CONNECT",
+        "message": "failure_user_93 connected"
+      },
+      {
+        "time": 171.70963716506958,
+        "type": "WS_CONNECT",
+        "message": "failure_user_147 connected"
+      },
+      {
+        "time": 171.7198760509491,
+        "type": "WS_CONNECT",
+        "message": "failure_user_18 connected"
+      },
+      {
+        "time": 171.72506403923035,
+        "type": "WS_CONNECT",
+        "message": "failure_user_168 connected"
+      },
+      {
+        "time": 171.7272710800171,
+        "type": "WS_CONNECT",
+        "message": "failure_user_134 connected"
+      },
+      {
+        "time": 171.7282361984253,
+        "type": "WS_CONNECT",
+        "message": "failure_user_63 connected"
+      },
+      {
+        "time": 171.73042607307434,
+        "type": "WS_CONNECT",
+        "message": "failure_user_173 connected"
+      },
+      {
+        "time": 171.73075604438782,
+        "type": "WS_CONNECT",
+        "message": "failure_user_95 connected"
+      },
+      {
+        "time": 171.7344331741333,
+        "type": "WS_CONNECT",
+        "message": "failure_user_191 connected"
+      },
+      {
+        "time": 171.73777413368225,
+        "type": "WS_CONNECT",
+        "message": "failure_user_188 connected"
+      },
+      {
+        "time": 171.74055814743042,
+        "type": "WS_CONNECT",
+        "message": "failure_user_124 connected"
+      },
+      {
+        "time": 171.74184012413025,
+        "type": "WS_CONNECT",
+        "message": "failure_user_58 connected"
+      },
+      {
+        "time": 171.7435131072998,
+        "type": "WS_CONNECT",
+        "message": "failure_user_53 connected"
+      },
+      {
+        "time": 171.7443540096283,
+        "type": "WS_CONNECT",
+        "message": "failure_user_169 connected"
+      },
+      {
+        "time": 171.74436926841736,
+        "type": "WS_CONNECT",
+        "message": "failure_user_186 connected"
+      },
+      {
+        "time": 171.74609112739563,
+        "type": "WS_CONNECT",
+        "message": "failure_user_5 connected"
+      },
+      {
+        "time": 171.74614310264587,
+        "type": "WS_CONNECT",
+        "message": "failure_user_194 connected"
+      },
+      {
+        "time": 171.74615812301636,
+        "type": "WS_CONNECT",
+        "message": "failure_user_196 connected"
+      },
+      {
+        "time": 171.7461860179901,
+        "type": "WS_CONNECT",
+        "message": "failure_user_153 connected"
+      },
+      {
+        "time": 171.74621105194092,
+        "type": "WS_CONNECT",
+        "message": "failure_user_133 connected"
+      },
+      {
+        "time": 171.74622511863708,
+        "type": "WS_CONNECT",
+        "message": "failure_user_1 connected"
+      },
+      {
+        "time": 171.7462363243103,
+        "type": "WS_CONNECT",
+        "message": "failure_user_181 connected"
+      },
+      {
+        "time": 171.74922800064087,
+        "type": "WS_CONNECT",
+        "message": "failure_user_123 connected"
+      },
+      {
+        "time": 171.74929308891296,
+        "type": "WS_CONNECT",
+        "message": "failure_user_176 connected"
+      },
+      {
+        "time": 171.74930906295776,
+        "type": "WS_CONNECT",
+        "message": "failure_user_69 connected"
+      },
+      {
+        "time": 171.7493691444397,
+        "type": "WS_CONNECT",
+        "message": "failure_user_141 connected"
+      },
+      {
+        "time": 171.74939227104187,
+        "type": "WS_CONNECT",
+        "message": "failure_user_65 connected"
+      },
+      {
+        "time": 171.7494342327118,
+        "type": "WS_CONNECT",
+        "message": "failure_user_164 connected"
+      },
+      {
+        "time": 171.74944734573364,
+        "type": "WS_CONNECT",
+        "message": "failure_user_80 connected"
+      },
+      {
+        "time": 171.7494683265686,
+        "type": "WS_CONNECT",
+        "message": "failure_user_170 connected"
+      },
+      {
+        "time": 171.74948406219482,
+        "type": "WS_CONNECT",
+        "message": "failure_user_148 connected"
+      },
+      {
+        "time": 171.74950098991394,
+        "type": "WS_CONNECT",
+        "message": "failure_user_60 connected"
+      },
+      {
+        "time": 171.74951815605164,
+        "type": "WS_CONNECT",
+        "message": "failure_user_91 connected"
+      },
+      {
+        "time": 171.7495322227478,
+        "type": "WS_CONNECT",
+        "message": "failure_user_122 connected"
+      },
+      {
+        "time": 171.7495412826538,
+        "type": "WS_CONNECT",
+        "message": "failure_user_139 connected"
+      },
+      {
+        "time": 171.74962401390076,
+        "type": "WS_CONNECT",
+        "message": "failure_user_73 connected"
+      },
+      {
+        "time": 171.7496461868286,
+        "type": "WS_CONNECT",
+        "message": "failure_user_130 connected"
+      },
+      {
+        "time": 171.74965810775757,
+        "type": "WS_CONNECT",
+        "message": "failure_user_90 connected"
+      },
+      {
+        "time": 171.75346612930298,
+        "type": "WS_CONNECT",
+        "message": "failure_user_56 connected"
+      },
+      {
+        "time": 171.75356698036194,
+        "type": "WS_CONNECT",
+        "message": "failure_user_16 connected"
+      },
+      {
+        "time": 171.75358700752258,
+        "type": "WS_CONNECT",
+        "message": "failure_user_113 connected"
+      },
+      {
+        "time": 171.7536063194275,
+        "type": "WS_CONNECT",
+        "message": "failure_user_30 connected"
+      },
+      {
+        "time": 171.75363612174988,
+        "type": "WS_CONNECT",
+        "message": "failure_user_195 connected"
+      },
+      {
+        "time": 171.75364995002747,
+        "type": "WS_CONNECT",
+        "message": "failure_user_47 connected"
+      },
+      {
+        "time": 171.75366306304932,
+        "type": "WS_CONNECT",
+        "message": "failure_user_182 connected"
+      },
+      {
+        "time": 171.75367617607117,
+        "type": "WS_CONNECT",
+        "message": "failure_user_179 connected"
+      },
+      {
+        "time": 171.75369119644165,
+        "type": "WS_CONNECT",
+        "message": "failure_user_154 connected"
+      },
+      {
+        "time": 171.75480008125305,
+        "type": "WS_CONNECT",
+        "message": "failure_user_180 connected"
+      },
+      {
+        "time": 171.7548611164093,
+        "type": "WS_CONNECT",
+        "message": "failure_user_52 connected"
+      },
+      {
+        "time": 171.75487804412842,
+        "type": "WS_CONNECT",
+        "message": "failure_user_192 connected"
+      },
+      {
+        "time": 171.7548930644989,
+        "type": "WS_CONNECT",
+        "message": "failure_user_129 connected"
+      },
+      {
+        "time": 171.75490522384644,
+        "type": "WS_CONNECT",
+        "message": "failure_user_119 connected"
+      },
+      {
+        "time": 171.75491619110107,
+        "type": "WS_CONNECT",
+        "message": "failure_user_121 connected"
+      },
+      {
+        "time": 171.75531005859375,
+        "type": "WS_CONNECT",
+        "message": "failure_user_72 connected"
+      },
+      {
+        "time": 171.7553300857544,
+        "type": "WS_CONNECT",
+        "message": "failure_user_9 connected"
+      },
+      {
+        "time": 171.755362033844,
+        "type": "WS_CONNECT",
+        "message": "failure_user_108 connected"
+      },
+      {
+        "time": 171.7553732395172,
+        "type": "WS_CONNECT",
+        "message": "failure_user_127 connected"
+      },
+      {
+        "time": 171.75540614128113,
+        "type": "WS_CONNECT",
+        "message": "failure_user_198 connected"
+      },
+      {
+        "time": 171.75542211532593,
+        "type": "WS_CONNECT",
+        "message": "failure_user_79 connected"
+      },
+      {
+        "time": 171.7554371356964,
+        "type": "WS_CONNECT",
+        "message": "failure_user_42 connected"
+      },
+      {
+        "time": 171.75545406341553,
+        "type": "WS_CONNECT",
+        "message": "failure_user_161 connected"
+      },
+      {
+        "time": 171.75709414482117,
+        "type": "WS_CONNECT",
+        "message": "failure_user_36 connected"
+      },
+      {
+        "time": 171.75711512565613,
+        "type": "WS_CONNECT",
+        "message": "failure_user_145 connected"
+      },
+      {
+        "time": 171.7571361064911,
+        "type": "WS_CONNECT",
+        "message": "failure_user_143 connected"
+      },
+      {
+        "time": 171.75723910331726,
+        "type": "WS_CONNECT",
+        "message": "failure_user_86 connected"
+      },
+      {
+        "time": 171.7572820186615,
+        "type": "WS_CONNECT",
+        "message": "failure_user_85 connected"
+      },
+      {
+        "time": 171.7573082447052,
+        "type": "WS_CONNECT",
+        "message": "failure_user_92 connected"
+      },
+      {
+        "time": 171.7573220729828,
+        "type": "WS_CONNECT",
+        "message": "failure_user_15 connected"
+      },
+      {
+        "time": 171.75735211372375,
+        "type": "WS_CONNECT",
+        "message": "failure_user_94 connected"
+      },
+      {
+        "time": 171.7573640346527,
+        "type": "WS_CONNECT",
+        "message": "failure_user_104 connected"
+      },
+      {
+        "time": 171.75737595558167,
+        "type": "WS_CONNECT",
+        "message": "failure_user_83 connected"
+      },
+      {
+        "time": 171.75738716125488,
+        "type": "WS_CONNECT",
+        "message": "failure_user_103 connected"
+      },
+      {
+        "time": 171.75739908218384,
+        "type": "WS_CONNECT",
+        "message": "failure_user_21 connected"
+      },
+      {
+        "time": 171.75741505622864,
+        "type": "WS_CONNECT",
+        "message": "failure_user_68 connected"
+      },
+      {
+        "time": 171.7598259449005,
+        "type": "WS_CONNECT",
+        "message": "failure_user_7 connected"
+      },
+      {
+        "time": 171.75984907150269,
+        "type": "WS_CONNECT",
+        "message": "failure_user_96 connected"
+      },
+      {
+        "time": 171.7598671913147,
+        "type": "WS_CONNECT",
+        "message": "failure_user_59 connected"
+      },
+      {
+        "time": 171.75988101959229,
+        "type": "WS_CONNECT",
+        "message": "failure_user_87 connected"
+      },
+      {
+        "time": 171.75992012023926,
+        "type": "WS_CONNECT",
+        "message": "failure_user_165 connected"
+      },
+      {
+        "time": 171.75993394851685,
+        "type": "WS_CONNECT",
+        "message": "failure_user_37 connected"
+      },
+      {
+        "time": 171.7599561214447,
+        "type": "WS_CONNECT",
+        "message": "failure_user_39 connected"
+      },
+      {
+        "time": 171.75999522209167,
+        "type": "WS_CONNECT",
+        "message": "failure_user_82 connected"
+      },
+      {
+        "time": 171.7600221633911,
+        "type": "WS_CONNECT",
+        "message": "failure_user_33 connected"
+      },
+      {
+        "time": 171.7600440979004,
+        "type": "WS_CONNECT",
+        "message": "failure_user_101 connected"
+      },
+      {
+        "time": 171.76005911827087,
+        "type": "WS_CONNECT",
+        "message": "failure_user_46 connected"
+      },
+      {
+        "time": 171.76007604599,
+        "type": "WS_CONNECT",
+        "message": "failure_user_144 connected"
+      },
+      {
+        "time": 171.76010012626648,
+        "type": "WS_CONNECT",
+        "message": "failure_user_25 connected"
+      },
+      {
+        "time": 171.760112285614,
+        "type": "WS_CONNECT",
+        "message": "failure_user_81 connected"
+      },
+      {
+        "time": 171.7601342201233,
+        "type": "WS_CONNECT",
+        "message": "failure_user_88 connected"
+      },
+      {
+        "time": 171.7601501941681,
+        "type": "WS_CONNECT",
+        "message": "failure_user_135 connected"
+      },
+      {
+        "time": 171.76016211509705,
+        "type": "WS_CONNECT",
+        "message": "failure_user_64 connected"
+      },
+      {
+        "time": 171.7613010406494,
+        "type": "WS_CONNECT",
+        "message": "failure_user_74 connected"
+      },
+      {
+        "time": 171.76133704185486,
+        "type": "WS_CONNECT",
+        "message": "failure_user_2 connected"
+      },
+      {
+        "time": 171.7613639831543,
+        "type": "WS_CONNECT",
+        "message": "failure_user_112 connected"
+      },
+      {
+        "time": 171.7614130973816,
+        "type": "WS_CONNECT",
+        "message": "failure_user_50 connected"
+      },
+      {
+        "time": 171.76144218444824,
+        "type": "WS_CONNECT",
+        "message": "failure_user_38 connected"
+      },
+      {
+        "time": 171.7614550590515,
+        "type": "WS_CONNECT",
+        "message": "failure_user_128 connected"
+      },
+      {
+        "time": 171.76146626472473,
+        "type": "WS_CONNECT",
+        "message": "failure_user_138 connected"
+      },
+      {
+        "time": 171.7614781856537,
+        "type": "WS_CONNECT",
+        "message": "failure_user_114 connected"
+      },
+      {
+        "time": 171.761981010437,
+        "type": "WS_CONNECT",
+        "message": "failure_user_142 connected"
+      },
+      {
+        "time": 366.4947829246521,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_17 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 366.64475107192993,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_25 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 366.71984219551086,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_29 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 366.9628872871399,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_37 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 368.0125880241394,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_85 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 369.584593296051,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_153 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 370.63337802886963,
+        "type": "TEST_END",
+        "message": "Test completed"
+      }
+    ]
+  }
+}

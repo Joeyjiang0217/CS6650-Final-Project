@@ -1,0 +1,38 @@
+{
+  "experiment": "fanout_stress_test",
+  "timestamp": "2026-04-17T21:50:24.983808",
+  "config": {
+    "group_size": 500,
+    "num_messages": 20
+  },
+  "results": {
+    "messages_sent": 20,
+    "total_received": 2284,
+    "errors": {
+      "Receive error: Connection to remote host was lost.": 157
+    },
+    "total_errors": 157,
+    "broadcast_time": {
+      "avg": 129.02774810791016,
+      "median": 115.7306432723999,
+      "p95": 201.41196250915527,
+      "p99": 201.41196250915527,
+      "max": 201.41196250915527,
+      "min": 99.37787055969238
+    },
+    "individual_latency": {
+      "avg": 121.35287905323943,
+      "median": 110.78500747680664,
+      "p95": 192.71206855773926,
+      "p99": 197.9219913482666,
+      "max": 201.41196250915527,
+      "min": 88.49000930786133
+    },
+    "reception_rate": {
+      "avg_receivers_per_msg": 114.2,
+      "min_receivers": 2,
+      "max_receivers": 290
+    }
+  },
+  "session_id": "s_1776487685616819057"
+}

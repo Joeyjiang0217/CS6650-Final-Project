@@ -1,0 +1,551 @@
+{
+  "experiment": "failure_injection",
+  "timestamp": "2026-04-17T23:01:34.363035",
+  "config": {
+    "num_users": 100,
+    "duration": 300
+  },
+  "results": {
+    "messages_sent": 274,
+    "messages_succeeded": 224,
+    "messages_failed": 50,
+    "success_rate": 81.75182481751825,
+    "ws_disconnections": 2,
+    "ws_reconnections": 100,
+    "errors": {
+      "HTTP 500": 50
+    },
+    "timeline": [
+      {
+        "time": 0.15442705154418945,
+        "type": "SETUP",
+        "message": "Created session s_1776491787192152509"
+      },
+      {
+        "time": 0.20850586891174316,
+        "type": "WS_CONNECT",
+        "message": "failure_user_0 connected"
+      },
+      {
+        "time": 0.22355008125305176,
+        "type": "WS_CONNECT",
+        "message": "failure_user_1 connected"
+      },
+      {
+        "time": 0.23645806312561035,
+        "type": "WS_CONNECT",
+        "message": "failure_user_2 connected"
+      },
+      {
+        "time": 0.3330221176147461,
+        "type": "WS_CONNECT",
+        "message": "failure_user_3 connected"
+      },
+      {
+        "time": 0.34531211853027344,
+        "type": "WS_CONNECT",
+        "message": "failure_user_4 connected"
+      },
+      {
+        "time": 0.3508570194244385,
+        "type": "WS_CONNECT",
+        "message": "failure_user_5 connected"
+      },
+      {
+        "time": 0.3698709011077881,
+        "type": "WS_CONNECT",
+        "message": "failure_user_6 connected"
+      },
+      {
+        "time": 0.39258909225463867,
+        "type": "WS_CONNECT",
+        "message": "failure_user_8 connected"
+      },
+      {
+        "time": 0.39266014099121094,
+        "type": "WS_CONNECT",
+        "message": "failure_user_7 connected"
+      },
+      {
+        "time": 0.394240140914917,
+        "type": "WS_CONNECT",
+        "message": "failure_user_13 connected"
+      },
+      {
+        "time": 0.3943049907684326,
+        "type": "WS_CONNECT",
+        "message": "failure_user_11 connected"
+      },
+      {
+        "time": 0.3981010913848877,
+        "type": "WS_CONNECT",
+        "message": "failure_user_12 connected"
+      },
+      {
+        "time": 0.3981618881225586,
+        "type": "WS_CONNECT",
+        "message": "failure_user_9 connected"
+      },
+      {
+        "time": 0.39821386337280273,
+        "type": "WS_CONNECT",
+        "message": "failure_user_14 connected"
+      },
+      {
+        "time": 0.4018697738647461,
+        "type": "WS_CONNECT",
+        "message": "failure_user_16 connected"
+      },
+      {
+        "time": 0.4019358158111572,
+        "type": "WS_CONNECT",
+        "message": "failure_user_15 connected"
+      },
+      {
+        "time": 0.40202999114990234,
+        "type": "WS_CONNECT",
+        "message": "failure_user_10 connected"
+      },
+      {
+        "time": 0.41056299209594727,
+        "type": "WS_CONNECT",
+        "message": "failure_user_17 connected"
+      },
+      {
+        "time": 0.4281611442565918,
+        "type": "WS_CONNECT",
+        "message": "failure_user_18 connected"
+      },
+      {
+        "time": 0.4377098083496094,
+        "type": "WS_CONNECT",
+        "message": "failure_user_19 connected"
+      },
+      {
+        "time": 0.45118284225463867,
+        "type": "WS_CONNECT",
+        "message": "failure_user_20 connected"
+      },
+      {
+        "time": 0.4621257781982422,
+        "type": "WS_CONNECT",
+        "message": "failure_user_21 connected"
+      },
+      {
+        "time": 0.47822999954223633,
+        "type": "WS_CONNECT",
+        "message": "failure_user_22 connected"
+      },
+      {
+        "time": 0.4870610237121582,
+        "type": "WS_CONNECT",
+        "message": "failure_user_23 connected"
+      },
+      {
+        "time": 0.4961879253387451,
+        "type": "WS_CONNECT",
+        "message": "failure_user_24 connected"
+      },
+      {
+        "time": 0.5148329734802246,
+        "type": "WS_CONNECT",
+        "message": "failure_user_25 connected"
+      },
+      {
+        "time": 0.5192010402679443,
+        "type": "WS_CONNECT",
+        "message": "failure_user_26 connected"
+      },
+      {
+        "time": 0.5387730598449707,
+        "type": "WS_CONNECT",
+        "message": "failure_user_27 connected"
+      },
+      {
+        "time": 0.5426969528198242,
+        "type": "WS_CONNECT",
+        "message": "failure_user_28 connected"
+      },
+      {
+        "time": 0.5535140037536621,
+        "type": "WS_CONNECT",
+        "message": "failure_user_29 connected"
+      },
+      {
+        "time": 0.5656330585479736,
+        "type": "WS_CONNECT",
+        "message": "failure_user_30 connected"
+      },
+      {
+        "time": 0.578679084777832,
+        "type": "WS_CONNECT",
+        "message": "failure_user_31 connected"
+      },
+      {
+        "time": 0.5875110626220703,
+        "type": "WS_CONNECT",
+        "message": "failure_user_32 connected"
+      },
+      {
+        "time": 0.6003420352935791,
+        "type": "WS_CONNECT",
+        "message": "failure_user_33 connected"
+      },
+      {
+        "time": 0.6118311882019043,
+        "type": "WS_CONNECT",
+        "message": "failure_user_34 connected"
+      },
+      {
+        "time": 0.6283998489379883,
+        "type": "WS_CONNECT",
+        "message": "failure_user_35 connected"
+      },
+      {
+        "time": 0.6342401504516602,
+        "type": "WS_CONNECT",
+        "message": "failure_user_36 connected"
+      },
+      {
+        "time": 0.6473889350891113,
+        "type": "WS_CONNECT",
+        "message": "failure_user_37 connected"
+      },
+      {
+        "time": 0.6625270843505859,
+        "type": "WS_CONNECT",
+        "message": "failure_user_38 connected"
+      },
+      {
+        "time": 0.6762690544128418,
+        "type": "WS_CONNECT",
+        "message": "failure_user_39 connected"
+      },
+      {
+        "time": 0.6900618076324463,
+        "type": "WS_CONNECT",
+        "message": "failure_user_40 connected"
+      },
+      {
+        "time": 0.7006537914276123,
+        "type": "WS_CONNECT",
+        "message": "failure_user_41 connected"
+      },
+      {
+        "time": 0.7096588611602783,
+        "type": "WS_CONNECT",
+        "message": "failure_user_42 connected"
+      },
+      {
+        "time": 0.7234818935394287,
+        "type": "WS_CONNECT",
+        "message": "failure_user_43 connected"
+      },
+      {
+        "time": 0.7414820194244385,
+        "type": "WS_CONNECT",
+        "message": "failure_user_44 connected"
+      },
+      {
+        "time": 0.7453410625457764,
+        "type": "WS_CONNECT",
+        "message": "failure_user_45 connected"
+      },
+      {
+        "time": 0.7622201442718506,
+        "type": "WS_CONNECT",
+        "message": "failure_user_46 connected"
+      },
+      {
+        "time": 0.8566410541534424,
+        "type": "WS_CONNECT",
+        "message": "failure_user_47 connected"
+      },
+      {
+        "time": 0.8756470680236816,
+        "type": "WS_CONNECT",
+        "message": "failure_user_48 connected"
+      },
+      {
+        "time": 0.8756740093231201,
+        "type": "WS_CONNECT",
+        "message": "failure_user_49 connected"
+      },
+      {
+        "time": 0.9034109115600586,
+        "type": "WS_CONNECT",
+        "message": "failure_user_50 connected"
+      },
+      {
+        "time": 0.9171731472015381,
+        "type": "WS_CONNECT",
+        "message": "failure_user_56 connected"
+      },
+      {
+        "time": 0.9190740585327148,
+        "type": "WS_CONNECT",
+        "message": "failure_user_52 connected"
+      },
+      {
+        "time": 0.9190940856933594,
+        "type": "WS_CONNECT",
+        "message": "failure_user_54 connected"
+      },
+      {
+        "time": 0.9206340312957764,
+        "type": "WS_CONNECT",
+        "message": "failure_user_58 connected"
+      },
+      {
+        "time": 0.9206490516662598,
+        "type": "WS_CONNECT",
+        "message": "failure_user_51 connected"
+      },
+      {
+        "time": 0.9244840145111084,
+        "type": "WS_CONNECT",
+        "message": "failure_user_59 connected"
+      },
+      {
+        "time": 0.9245169162750244,
+        "type": "WS_CONNECT",
+        "message": "failure_user_53 connected"
+      },
+      {
+        "time": 0.9245650768280029,
+        "type": "WS_CONNECT",
+        "message": "failure_user_57 connected"
+      },
+      {
+        "time": 0.9246339797973633,
+        "type": "WS_CONNECT",
+        "message": "failure_user_55 connected"
+      },
+      {
+        "time": 0.9278669357299805,
+        "type": "WS_CONNECT",
+        "message": "failure_user_60 connected"
+      },
+      {
+        "time": 0.9423561096191406,
+        "type": "WS_CONNECT",
+        "message": "failure_user_61 connected"
+      },
+      {
+        "time": 0.9464731216430664,
+        "type": "WS_CONNECT",
+        "message": "failure_user_62 connected"
+      },
+      {
+        "time": 0.9654579162597656,
+        "type": "WS_CONNECT",
+        "message": "failure_user_63 connected"
+      },
+      {
+        "time": 0.9753439426422119,
+        "type": "WS_CONNECT",
+        "message": "failure_user_64 connected"
+      },
+      {
+        "time": 0.9857261180877686,
+        "type": "WS_CONNECT",
+        "message": "failure_user_65 connected"
+      },
+      {
+        "time": 0.9970278739929199,
+        "type": "WS_CONNECT",
+        "message": "failure_user_66 connected"
+      },
+      {
+        "time": 1.0108880996704102,
+        "type": "WS_CONNECT",
+        "message": "failure_user_67 connected"
+      },
+      {
+        "time": 1.0180811882019043,
+        "type": "WS_CONNECT",
+        "message": "failure_user_68 connected"
+      },
+      {
+        "time": 1.0386250019073486,
+        "type": "WS_CONNECT",
+        "message": "failure_user_69 connected"
+      },
+      {
+        "time": 1.0512750148773193,
+        "type": "WS_CONNECT",
+        "message": "failure_user_70 connected"
+      },
+      {
+        "time": 1.0553748607635498,
+        "type": "WS_CONNECT",
+        "message": "failure_user_71 connected"
+      },
+      {
+        "time": 1.0719869136810303,
+        "type": "WS_CONNECT",
+        "message": "failure_user_72 connected"
+      },
+      {
+        "time": 1.0843019485473633,
+        "type": "WS_CONNECT",
+        "message": "failure_user_73 connected"
+      },
+      {
+        "time": 1.0989561080932617,
+        "type": "WS_CONNECT",
+        "message": "failure_user_74 connected"
+      },
+      {
+        "time": 1.1056880950927734,
+        "type": "WS_CONNECT",
+        "message": "failure_user_75 connected"
+      },
+      {
+        "time": 1.1182160377502441,
+        "type": "WS_CONNECT",
+        "message": "failure_user_76 connected"
+      },
+      {
+        "time": 1.1259889602661133,
+        "type": "WS_CONNECT",
+        "message": "failure_user_77 connected"
+      },
+      {
+        "time": 1.1429908275604248,
+        "type": "WS_CONNECT",
+        "message": "failure_user_78 connected"
+      },
+      {
+        "time": 1.1593191623687744,
+        "type": "WS_CONNECT",
+        "message": "failure_user_79 connected"
+      },
+      {
+        "time": 1.1725199222564697,
+        "type": "WS_CONNECT",
+        "message": "failure_user_80 connected"
+      },
+      {
+        "time": 1.1845860481262207,
+        "type": "WS_CONNECT",
+        "message": "failure_user_81 connected"
+      },
+      {
+        "time": 1.1916041374206543,
+        "type": "WS_CONNECT",
+        "message": "failure_user_82 connected"
+      },
+      {
+        "time": 1.202286958694458,
+        "type": "WS_CONNECT",
+        "message": "failure_user_83 connected"
+      },
+      {
+        "time": 1.2147729396820068,
+        "type": "WS_CONNECT",
+        "message": "failure_user_84 connected"
+      },
+      {
+        "time": 1.2332208156585693,
+        "type": "WS_CONNECT",
+        "message": "failure_user_85 connected"
+      },
+      {
+        "time": 1.2437739372253418,
+        "type": "WS_CONNECT",
+        "message": "failure_user_86 connected"
+      },
+      {
+        "time": 1.2564780712127686,
+        "type": "WS_CONNECT",
+        "message": "failure_user_87 connected"
+      },
+      {
+        "time": 1.2716560363769531,
+        "type": "WS_CONNECT",
+        "message": "failure_user_88 connected"
+      },
+      {
+        "time": 1.280428171157837,
+        "type": "WS_CONNECT",
+        "message": "failure_user_89 connected"
+      },
+      {
+        "time": 1.3809289932250977,
+        "type": "WS_CONNECT",
+        "message": "failure_user_90 connected"
+      },
+      {
+        "time": 1.3995130062103271,
+        "type": "WS_CONNECT",
+        "message": "failure_user_92 connected"
+      },
+      {
+        "time": 1.3995630741119385,
+        "type": "WS_CONNECT",
+        "message": "failure_user_91 connected"
+      },
+      {
+        "time": 1.4207360744476318,
+        "type": "WS_CONNECT",
+        "message": "failure_user_93 connected"
+      },
+      {
+        "time": 1.4434449672698975,
+        "type": "WS_CONNECT",
+        "message": "failure_user_97 connected"
+      },
+      {
+        "time": 1.4434990882873535,
+        "type": "WS_CONNECT",
+        "message": "failure_user_96 connected"
+      },
+      {
+        "time": 1.443537950515747,
+        "type": "WS_CONNECT",
+        "message": "failure_user_94 connected"
+      },
+      {
+        "time": 1.4435758590698242,
+        "type": "WS_CONNECT",
+        "message": "failure_user_98 connected"
+      },
+      {
+        "time": 1.4436049461364746,
+        "type": "WS_CONNECT",
+        "message": "failure_user_95 connected"
+      },
+      {
+        "time": 1.4437048435211182,
+        "type": "WS_CONNECT",
+        "message": "failure_user_99 connected"
+      },
+      {
+        "time": 4.366450071334839,
+        "type": "SETUP",
+        "message": "All clients started"
+      },
+      {
+        "time": 4.367247819900513,
+        "type": "TEST_START",
+        "message": "Continuous message sending started"
+      },
+      {
+        "time": 306.9075222015381,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_85 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 307.14972019195557,
+        "type": "WS_DISCONNECT",
+        "message": "failure_user_93 disconnected: [Errno 9] Bad file descriptor"
+      },
+      {
+        "time": 307.26149678230286,
+        "type": "TEST_END",
+        "message": "Test completed"
+      }
+    ]
+  }
+}

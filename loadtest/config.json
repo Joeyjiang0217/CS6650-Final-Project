@@ -1,0 +1,7 @@
+{
+  "alb_url": "http://chatroom-dev-alb-1018149423.us-west-2.elb.amazonaws.com",
+  "ws_url": "ws://chatroom-dev-alb-1018149423.us-west-2.elb.amazonaws.com/ws",
+  "region": "us-west-2",
+  "cluster_name": "chatroom-dev-cluster",
+  "gateway_service": "chatroom-dev-gateway"
+}
