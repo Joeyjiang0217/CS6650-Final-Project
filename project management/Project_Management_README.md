@@ -187,6 +187,19 @@ We ran load tests and measured the performance of the deployed system. **See the
 
 ---
 
+## Problem Log
+
+A summary of the main obstacles encountered and how they were resolved.
+
+| Problem | Where | Resolution |
+|---|---|---|
+| Designing a schema that supports atomic seq allocation | Database design | Put `last_seq` in `chat_sessions` and update it in the same transaction as the message insert |
+| Coupling between HTTP handlers and gRPC calls made code hard to test | Gateway and Transmit | Split into `internal/` (logic) and `cmd/main.go` (entry point) |
+| `terraform apply` succeeded but services couldn't find each other | AWS deployment | Force-replaced all four ECS services to trigger fresh Service Connect registration |
+| Same Go code needed to run locally, in Docker Compose, and on AWS | Cross-environment | Made all service targets configurable via environment variables — same binary, different addresses |
+
+---
+
 ## Retrospective
 
 **What worked well:**
@@ -197,6 +210,6 @@ We ran load tests and measured the performance of the deployed system. **See the
 
 **What we would do differently:**
 
-- Write the Terraform deployment earlier. Deploying late meant the Service Connect issue showed up close to the deadline.
-- Add an automated verification step after `terraform apply` that confirms Service Connect registration before declaring the deploy done.
-- Deduplicate the gRPC client wrappers in Gateway and Transmit — right now both services have near-identical `client/` directories.
+- **Find a cleaner way to avoid the Service Connect race.** Right now we only fix the problem reactively — when `serviceConnectConfiguration` comes back `null`, we force-replace all four services. Next time we would build the workaround into the deploy flow itself: add a `time_sleep` resource between creating the Cloud Map namespace and creating the ECS services so the namespace has time to fully propagate, set `force_new_deployment = true` on every ECS service so each apply triggers a fresh registration against a now-stable namespace, and add a post-apply verification script that actually calls the API and confirms DNS resolution before declaring the deploy done. That way the race is prevented structurally, not patched afterwards.
+- **Add a `/api/sessions/direct` endpoint.** Our Gateway currently only exposes `/api/sessions/group` — there is no corresponding endpoint for one-on-one conversations. The underlying database schema already supports it (`chat_sessions.type` can be `'direct'`), but we never finished the API surface or the service logic. Direct sessions are actually trickier than group sessions for three reasons: they need **find-or-create** semantics (A+B should always resolve to the same session, regardless of who initiates), the `name` field has no natural value (the frontend needs to display the *other* person's name from the current user's perspective), and **argument order has to be normalized** so `CreateDirectSession(A, B)` and `CreateDirectSession(B, A)` produce the same session. Next time we would design the direct-session path first and treat the group path as a specialization, not the other way around.
+- **Batch the MySQL queries in Chat Service and Message Storage.** Our current data access layer is correct but not efficient — many paths that logically represent "one operation" actually issue N separate round trips to MySQL. Two concrete examples from our code: Message Storage's `BatchGetSessionSnapshots` runs a single `WHERE session_id IN (...)` for the seq numbers but then loops over each session and calls `GetSessionLastMessage` one at a time — that's the classic N+1 query pattern. Chat Service's `CreateGroupChatSession` similarly runs a separate `INSERT` for every single member inside the transaction instead of one multi-row `INSERT`. At low load this is invisible; at scale it directly caps our successful message send rate per second. Next time we would rewrite these hot paths to use multi-row inserts, `JOIN`-based batch reads, and parallel fan-out with `errgroup` where appropriate — and quantify the throughput gain in the experiment phase.
