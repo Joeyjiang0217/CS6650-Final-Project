@@ -1,0 +1,19 @@
+{
+  "experiment": "connection_scaling",
+  "timestamp": "2026-04-17T21:17:45.333078",
+  "config": {
+    "target_connections": 500,
+    "batch_size": 50,
+    "keep_alive_seconds": 60
+  },
+  "results": {
+    "connected": 500,
+    "failed": 0,
+    "success_rate": 100.0,
+    "avg_connection_time": 0.08022928857803345,
+    "max_connection_time": 0.16459894180297852,
+    "min_connection_time": 0.049559831619262695,
+    "errors": {}
+  },
+  "total_time_seconds": 84.35865902900696
+}

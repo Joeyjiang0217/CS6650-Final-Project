@@ -1,0 +1,36 @@
+{
+  "experiment": "fanout_stress_test",
+  "timestamp": "2026-04-17T21:52:22.545037",
+  "config": {
+    "group_size": 200,
+    "num_messages": 20
+  },
+  "results": {
+    "messages_sent": 20,
+    "total_received": 2855,
+    "errors": {},
+    "total_errors": 0,
+    "broadcast_time": {
+      "avg": 106.6269040107727,
+      "median": 103.50310802459717,
+      "p95": 159.9900722503662,
+      "p99": 159.9900722503662,
+      "max": 159.9900722503662,
+      "min": 91.59708023071289
+    },
+    "individual_latency": {
+      "avg": 100.27881395169607,
+      "median": 97.79119491577148,
+      "p95": 146.14081382751465,
+      "p99": 158.16998481750488,
+      "max": 159.9900722503662,
+      "min": 76.02119445800781
+    },
+    "reception_rate": {
+      "avg_receivers_per_msg": 142.75,
+      "min_receivers": 29,
+      "max_receivers": 199
+    }
+  },
+  "session_id": "s_1776487853843560455"
+}

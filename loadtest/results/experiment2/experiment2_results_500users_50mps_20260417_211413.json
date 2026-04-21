@@ -1,0 +1,34 @@
+{
+  "experiment": "throughput_scaling",
+  "timestamp": "2026-04-17T21:14:13.117011",
+  "config": {
+    "num_users": 500,
+    "target_msg_per_sec": 50,
+    "duration_sec": 60
+  },
+  "results": {
+    "messages_sent": 526,
+    "messages_received": 237,
+    "errors": {},
+    "total_errors": 0,
+    "send_latency": {
+      "avg": 90.00357158283771,
+      "median": 73.38488101959229,
+      "p95": 158.81896018981934,
+      "p99": 164.1230583190918,
+      "max": 349.2300510406494,
+      "min": 64.2850399017334
+    },
+    "e2e_latency": {
+      "avg": 0.8033690070301168,
+      "median": 0.6358623504638672,
+      "p95": 1.9030570983886719,
+      "p99": 2.4378299713134766,
+      "max": 2.6319026947021484,
+      "min": 0.05698204040527344
+    },
+    "error_rate": 0.0
+  },
+  "actual_throughput": 8.761398893574126,
+  "session_id": "s_1776485580164751457"
+}
